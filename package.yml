@@ -1,0 +1,35 @@
+name: Widgets
+filename: widgets.js
+description: LSD widget set. Makes your html5 awesome.
+license: Public domain, http://unlicense.org
+copyright: Yaroslaff Fedin
+authors: Yaroslaff Fedin
+sources:
+  - Source/Body.js
+  - Source/Button.js
+  - Source/Container.js
+  - Source/Command.js
+  - Source/Form.js
+  - Source/Glyph.js
+  - Source/Input.js
+  - Source/Input/Checkbox.js
+  - Source/Input/Combo.js
+  - Source/Input/Radio.js
+  - Source/Input/Range.js
+  - Source/Input/Search.js
+  - Source/Label.js
+  - Source/Menu.js
+  - Source/Menu/Context.js
+  - Source/Menu/List.js
+  - Source/Menu/Toolbar.js
+  - Source/Menu/Toolbar.Menu.js
+  - Source/Panel.js
+  - Source/Scrollbar.js
+  - Source/Section.js
+  - Source/Header.js
+  - Source/Footer.js
+  - Source/Nav.js
+  - Source/Select.js
+  - Source/Textarea.js
+  - Source/Window.js
+  - Source/Window/Application.js
