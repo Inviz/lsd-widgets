@@ -28,11 +28,6 @@ LSD.Widget.Scrollbar = new Class({
   
   options: {
     tag: 'scrollbar',
-    layers: {
-      stroke: ['stroke'],
-      background: [LSD.Layer.Fill.Background],
-      reflection:  [LSD.Layer.Fill.Reflection]
-    },
     events: {
       expected: {
         '#incrementor': {
@@ -127,10 +122,7 @@ LSD.Widget.Scrollbar.Track = new Class({
   Extends: LSD.Widget.Section,
   
   options: {
-    tag: 'track',
-    layers: {
-      innerShadow:  ['inner-shadow']
-    }
+    tag: 'track'
   }
 });
 

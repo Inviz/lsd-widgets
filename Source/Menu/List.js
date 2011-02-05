@@ -59,12 +59,7 @@ LSD.Widget.Menu.List.Option = new Class({
   ],
   
   options: {
-    tag: 'option',
-    layers: {
-      fill:  ['stroke'],
-      reflection:  [LSD.Layer.Fill.Reflection],
-      background: [LSD.Layer.Fill.Background]
-    }
+    tag: 'option'
   }
 });
 

@@ -31,12 +31,6 @@ LSD.Widget.Input.Range = new Class({
   
   options: {
     tag: 'input',
-    layers: {
-      shadow: ['shadow'],
-      border: ['stroke'],
-      background: [LSD.Layer.Fill.Background],
-      reflection:  [LSD.Layer.Fill.Reflection]
-    },
     shortcuts: {
       next: 'increment',
       previous: 'decrement'

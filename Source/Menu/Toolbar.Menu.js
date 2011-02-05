@@ -10,16 +10,16 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD.Widget.Menu.Toolbar
-- LSD/LSD.Trait.Menu.Stateful
-- LSD/LSD.Trait.List
-- LSD/LSD.Trait.Item.Stateful
-- LSD/LSD.Trait.Accessibility
-- LSD/LSD.Trait.Proxies
+  - LSD.Widget.Menu.Toolbar
+  - LSD/LSD.Trait.Menu.Stateful
+  - LSD/LSD.Trait.List
+  - LSD/LSD.Trait.Item.Stateful
+  - LSD/LSD.Trait.Accessibility
+  - LSD/LSD.Trait.Proxies
 
 provides:
-- LSD.Widget.Menu.Toolbar.Menu
-- LSD.Widget.Menu.Toolbar.Menu.Label
+  - LSD.Widget.Menu.Toolbar.Menu
+  - LSD.Widget.Menu.Toolbar.Menu.Label
  
 ...
 */

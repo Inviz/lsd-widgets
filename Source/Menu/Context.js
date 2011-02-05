@@ -30,14 +30,7 @@ LSD.Widget.Menu.Context = new Class({
     LSD.Trait.Animation
   ],
 
-  options: {    
-    layers: {
-      shadow:  ['shadow'],
-      stroke:  ['stroke'],
-      background:  [LSD.Layer.Fill.Background],
-      reflection:  [LSD.Layer.Fill.Reflection],
-    },
-
+  options: { 
     attributes: {
       type: 'context'
     },
@@ -52,16 +45,7 @@ LSD.Widget.Menu.Context.Command = new Class({
   Includes: [
     LSD.Widget.Menu.Command,
     LSD.Trait.Item.Stateful
-  ],
-  
-  options: {
-    layers: {
-      fill:  ['stroke'],
-      reflection:  [LSD.Layer.Fill.Reflection],
-      background: [LSD.Layer.Fill.Background],
-      glyph: ['glyph']
-    }
-  }
+  ]
 });
 
 (function(Context) {

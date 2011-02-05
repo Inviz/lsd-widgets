@@ -10,13 +10,13 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD.Widget.Menu
-- LSD.Widget.Button
-- LSD/LSD.Mixin.Focus
-- LSD/LSD.Trait.List
+  - LSD.Widget.Menu
+  - LSD.Widget.Button
+  - LSD/LSD.Mixin.Focus
+  - LSD/LSD.Trait.List
 
 provides:
-- LSD.Widget.Menu.Toolbar
+  - LSD.Widget.Menu.Toolbar
 
  
 ...
@@ -31,12 +31,6 @@ LSD.Widget.Menu.Toolbar = new Class({
   options: {
     attributes: {
       type: 'toolbar'
-    },
-    layers: {
-      shadow:  ['shadow'],
-      stroke:  ['stroke'],
-      background:  [LSD.Layer.Fill.Background],
-      reflection:  [LSD.Layer.Fill.Reflection],
     }
   }
 });

@@ -154,10 +154,7 @@ LSD.Widget.Input.Icon = LSD.Widget.Input.Search.Icon = new Class({
   ],
   
   options: {
-    tag: 'icon',
-    layers: {
-      icon: ['icon']
-    }
+    tag: 'icon'
   }
   
 });

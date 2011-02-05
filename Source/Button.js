@@ -10,10 +10,11 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD/LSD.Widget.Paint
-- LSD/LSD.Mixin.Touchable
+  - LSD/LSD.Widget.Paint
+  - LSD/LSD.Mixin.Touchable
 
-provides: [LSD.Widget.Button]
+provides: 
+  - LSD.Widget.Button
  
 ...
 */
@@ -24,15 +25,6 @@ LSD.Widget.Button = new Class({
 
   options: {
     tag: 'button',
-    layers: {
-      shadow:  ['shadow'],
-      stroke: ['stroke'],
-      background:  [LSD.Layer.Fill.Background.Offset],
-      reflection:  [LSD.Layer.Fill.Reflection.Offset],
-      glyphShadow: ['glyph-shadow'],
-      glyph: ['glyph']
-    },
-    
     label: ''
   },
   

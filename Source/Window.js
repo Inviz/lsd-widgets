@@ -32,13 +32,7 @@ LSD.Widget.Window = new Class({
   },
   
   options: {
-    tag: 'window',
-    layers: {
-      shadow:  ['shadow'],
-      stroke:  ['stroke'],
-      reflection: [LSD.Layer.Fill.Reflection],
-      background: [LSD.Layer.Fill.Background]
-    }
+    tag: 'window'
   }
   
 });

@@ -26,13 +26,6 @@ LSD.Widget.Input.Radio = new Class({
   
   options: {
     tag: 'input',
-    layers: {
-      shadow:  ['shadow'],
-      stroke: ['stroke'],
-      background:  [LSD.Layer.Fill.Background],
-      reflection:  [LSD.Layer.Fill.Reflection],
-      glyph: ['glyph']
-    },
     shortcuts: {
       space: 'click'
     },

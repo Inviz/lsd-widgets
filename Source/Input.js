@@ -34,14 +34,6 @@ LSD.Widget.Input = new Class({
     attributes: {
       type: 'text'
     },
-
-    layers: {
-      shadow:  ['shadow'],
-      stroke: ['stroke'],
-      background:  [LSD.Layer.Fill.Background],
-      reflection:  [LSD.Layer.Fill.Reflection],
-      glyph: ['glyph']
-    },
     
     writable: true,
     focusable: false,    

@@ -41,13 +41,6 @@ LSD.Widget.Select = new Class({
   
   options: {
     tag: 'select',
-    layers: {
-      shadow:  ['shadow'],
-      stroke: ['stroke'],
-      background:  [LSD.Layer.Fill.Background],
-      reflection:  [LSD.Layer.Fill.Reflection],
-      glyph: ['glyph']
-    },
     layout: {
       item: '^option',
       children: {
@@ -107,13 +100,7 @@ LSD.Widget.Select.Option = new Class({
   },
   
   options: {
-    tag: 'option',
-    layers: {
-      fill:  ['stroke'],
-      reflection:  [LSD.Layer.Fill.Reflection],
-      background: [LSD.Layer.Fill.Background],
-      glyph: ['glyph']
-    }
+    tag: 'option'
   },
   
   getValue: function() {
