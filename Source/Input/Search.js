@@ -53,15 +53,24 @@ LSD.Widget.Input.Search = new Class({
       }
     },
     events: {
-      icon: {
-        click: 'expand'
-      },
-      button: {
-        click: 'clear'
-      },
-      self: {
-        set: 'setIcon',
-        focus: 'expand'
+      _search: {
+        icon: {
+          click: 'expand'
+        },
+        button: {
+          click: 'clear'
+        },
+        self: {
+          set: 'setIcon',
+          focus: 'expand',
+          attach: function() {
+            if (this.hasItems()) {
+              this.enrich();
+            } else {
+              this.clean();
+            }
+          }
+        }
       }
     },
     menu: {
@@ -69,22 +78,15 @@ LSD.Widget.Input.Search = new Class({
     }
   },
   
-  attach: Macro.onion(function() {
-    if (this.hasItems()) {
-      this.enrich();
-    } else {
-      this.clean();
-    }
-  }),
-  
-  setInputSize: Macro.onion(function() {
+  setInputSize: function() {
+    this.parent.apply(this, arguments);
     if (!this.resorted && this.icon.element.parentNode) {
       this.resorted = true;
       $(this.input).inject(this.icon, 'after')
     }
     if (this.button) this.button.refresh();
     this.input.setStyle('width', this.size.width - this.button.getLayoutWidth(this.button.size.width) - this.icon.getLayoutWidth() - 1)
-  }),
+  },
 	
   processValue: function(item) {
     return item.value.title;
@@ -127,15 +129,16 @@ LSD.Widget.Input.Option = LSD.Widget.Input.Search.Option = new Class({
     }
   },
   
-  render: Macro.onion(function() {
+  render: function() {
+    this.parent.apply(this, arguments);
     var icon = this.value ? this.value.icon : false;
     if ((this.icon == icon) || !icon) return;
     this.icon = icon;
     this.element.setStyle('background-image', 'url(' + icon + ')');
     this.element.setStyle('background-repeat', 'no-repeat');
     this.element.setStyle('background-position', ((this.offset.outside.left || 0) + 4) + 'px  center');
-    this.element.setStyle('padding-left', 15)
-  }),
+    this.element.setStyle('padding-left', 15);
+  },
   
   select: function() {
     this.listWidget.selectItem.delay(50, this.listWidget, [this]);

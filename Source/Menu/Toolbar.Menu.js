@@ -67,12 +67,13 @@ LSD.Widget.Menu.Toolbar.Menu = new Class({
     return this.parent.apply(this, arguments);
   },
   
-  render: Macro.onion(function() {
+  render: function() {
+    this.parent.apply(this, arguments);
     if (this.attributes.label && this.attributes.label != this.label) {
       this.label = this.attributes.label;
       this.setContent(this.label)
     }
-  }),
+  },
   
   processValue: function(item) {
     return item.value;
