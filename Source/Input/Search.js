@@ -97,7 +97,9 @@ LSD.Widget.Input.Search = new Class({
     this.focus();
   },
   
-  applyValue: $lambda(true),
+  applyValue: function() {
+    return true
+  },
   
   setIcon: function(item) {
     if (item && item.value) item = item.value.icon;

@@ -28,7 +28,9 @@ LSD.Widget.Form = new Class({
     layers: {},
     events: {
       element: {
-        submit: $lambda(false)
+        submit: function() {
+          return false
+        }
       }
     }
   }  
