@@ -10,11 +10,13 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD/LSD.Widget.Paint
-- LSD/LSD.Trait.Input
-- LSD/LSD.Mixin.Focus
+  - LSD/LSD.Widget.Paint
+  - LSD/LSD.Trait.Input
+  - LSD/LSD.Trait.Field
+  - LSD/LSD.Mixin.Focus
 
-provides: [LSD.Widget.Input]
+provides: 
+  - LSD.Widget.Input
  
 ...
 */
@@ -25,7 +27,8 @@ LSD.Widget.Input = new Class({
   
   Includes: [
     LSD.Widget.Paint,
-    LSD.Trait.Input
+    LSD.Trait.Input,
+    LSD/LSD.Trait.Field
   ],
   
   options: {
@@ -35,7 +38,6 @@ LSD.Widget.Input = new Class({
       type: 'text'
     },
     
-    writable: true,
     focusable: false,    
     events: {
       _input: {
