@@ -48,9 +48,9 @@ LSD.Widget.Menu.Context.Command = new Class({
   ]
 });
 
-(function(Context) {
+!function(Context) {
   Context.Button = Context.Option = Context.Radio = Context.Checkbox = Context.Command.Command = Context.Command;
-})(LSD.Widget.Menu.Context);
+}(LSD.Widget.Menu.Context);
 
     
 

@@ -40,6 +40,6 @@ LSD.Widget.Menu.Command = new Class({
   }
 });
 
-(function(Command) {
+!function(Command) {
   Command.Command = Command.Checkbox = Command.Radio = Command;
-})(LSD.Widget.Menu.Command);
+}(LSD.Widget.Menu.Command);
