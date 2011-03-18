@@ -25,12 +25,8 @@ LSD.Widget.Button = new Class({
 
   options: {
     tag: 'button',
-    label: ''
-  },
-  
-  initialize: function() {
-    this.parent.apply(this, arguments);
-    this.addPseudo('touchable');
+    label: '',
+    pseudos: FastArray.compact('touchable')
   },
   
   setContent: function(content) {
