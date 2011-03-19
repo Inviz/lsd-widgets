@@ -15,6 +15,7 @@ sources:
   - Source/Input/Range.js
   - Source/Input/Search.js
   - Source/Input/Submit.js
+  - Source/Input/Text.js
   - Source/Label.js
   - Source/Menu.js
   - Source/Menu/Context.js

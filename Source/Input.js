@@ -28,7 +28,7 @@ LSD.Widget.Input = new Class({
   Includes: [
     LSD.Widget.Paint,
     LSD.Trait.Input,
-    LSD/LSD.Trait.Field
+    LSD.Trait.Field
   ],
   
   options: {
