@@ -103,11 +103,6 @@ LSD.Widget.Select.Option = new Class({
     tag: 'option'
   },
   
-  getValue: function() {
-    if (this.attributes && this.attributes.value) this.value = this.attributes.value;
-    return this.parent.apply(this, arguments);
-  },
-  
   setContent: function() {
     return (this.value = this.parent.apply(this, arguments));
   }
