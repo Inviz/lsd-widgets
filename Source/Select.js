@@ -12,7 +12,6 @@ authors: Yaroslaff Fedin
 requires:
 - LSD/LSD.Widget
 - LSD.Widget.Button
-- LSD.Widget.Container
 - LSD/LSD.Trait.Menu
 - LSD/LSD.Trait.List
 - LSD/LSD.Trait.Item
