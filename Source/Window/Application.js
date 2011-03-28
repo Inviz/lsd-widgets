@@ -54,4 +54,4 @@ LSD.Widget.Window.Application = new Class({
       }
     }
   }
-})
+});
