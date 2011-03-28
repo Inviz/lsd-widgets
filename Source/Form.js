@@ -10,7 +10,7 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD/LSD.Widget.Paint
+- LSD/LSD.Widget
 
 provides: [LSD.Widget.Form]
  
@@ -18,7 +18,7 @@ provides: [LSD.Widget.Form]
 */
 
 LSD.Widget.Form = new Class({
-  Extends: LSD.Widget.Paint,
+  Extends: LSD.Widget,
 
   options: {
     tag: 'form',

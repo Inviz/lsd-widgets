@@ -20,7 +20,7 @@ provides: [LSD.Widget.Input.Checkbox]
 ...
 */
 LSD.Widget.Input.Checkbox = new Class({
-  Extends: LSD.Widget.Paint,
+  Extends: LSD.Widget,
   
   options: {
     tag: 'input',

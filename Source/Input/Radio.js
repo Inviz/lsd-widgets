@@ -11,7 +11,7 @@ authors: Yaroslaff Fedin
  
 requires:
 - LSD.Widget.Input
-- LSD/LSD.Widget.Paint
+- LSD/LSD.Widget
 - LSD/LSD.Mixin.Touchable
 - LSD/LSD.Mixin.Focus
 - LSD/LSD.Trait.Accessibility
@@ -22,7 +22,7 @@ provides: [LSD.Widget.Input.Radio]
 */
 
 LSD.Widget.Input.Radio = new Class({
-  Extends: LSD.Widget.Paint,
+  Extends: LSD.Widget,
   
   options: {
     tag: 'input',

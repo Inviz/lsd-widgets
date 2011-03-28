@@ -10,7 +10,7 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-  - LSD/LSD.Widget.Paint
+  - LSD/LSD.Widget
   - LSD/LSD.Mixin.Touchable
 
 provides: 
@@ -21,7 +21,7 @@ provides:
 
 LSD.Widget.Button = new Class({
 
-  Extends: LSD.Widget.Paint,
+  Extends: LSD.Widget,
 
   options: {
     tag: 'button',

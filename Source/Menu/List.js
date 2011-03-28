@@ -54,7 +54,7 @@ LSD.Widget.Menu.List = new Class({
 
 LSD.Widget.Menu.List.Option = new Class({
   Includes: [
-    LSD.Widget.Paint,
+    LSD.Widget,
     LSD.Trait.Item.Stateful
   ],
   

@@ -10,7 +10,7 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD/LSD.Widget.Paint
+- LSD/LSD.Widget
 - LSD/LSD.Trait.Animation
  
 provides: [LSD.Widget.Window]
@@ -21,7 +21,7 @@ provides: [LSD.Widget.Window]
 LSD.Widget.Window = new Class({
   
   Includes: [
-    LSD.Widget.Paint,
+    LSD.Widget,
     LSD.Trait.Animation
   ],
   

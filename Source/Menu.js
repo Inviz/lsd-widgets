@@ -10,7 +10,7 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-  - LSD/LSD.Widget.Paint
+  - LSD/LSD.Widget
 
 provides: 
   - LSD.Widget.Menu
@@ -19,7 +19,7 @@ provides:
 */
 
 LSD.Widget.Menu = new Class({
-  Extends: LSD.Widget.Paint,
+  Extends: LSD.Widget,
   
   options: {
     tag: 'menu',
@@ -30,7 +30,7 @@ LSD.Widget.Menu = new Class({
 });
 
 LSD.Widget.Menu.Command = new Class({
-  Extends: LSD.Widget.Paint,
+  Extends: LSD.Widget,
   
   options: {
     tag: 'command',

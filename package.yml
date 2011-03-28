@@ -6,7 +6,6 @@ copyright: Yaroslaff Fedin
 authors: Yaroslaff Fedin
 sources:
   - Source/Button.js
-  - Source/Container.js
   - Source/Form.js
   - Source/Input.js
   - Source/Input/Checkbox.js
@@ -16,14 +15,12 @@ sources:
   - Source/Input/Search.js
   - Source/Input/Submit.js
   - Source/Input/Text.js
-  - Source/Label.js
   - Source/Menu.js
   - Source/Menu/Context.js
   - Source/Menu/List.js
   - Source/Menu/Toolbar.js
   - Source/Menu/Toolbar.Menu.js
   - Source/Scrollbar.js
-  - Source/Section.js
   - Source/Select.js
   - Source/Textarea.js
   - Source/Window.js

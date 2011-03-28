@@ -10,7 +10,7 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD/LSD.Widget.Paint
+- LSD/LSD.Widget
 - LSD.Widget.Section
 - LSD.Widget.Button
 - LSD/LSD.Trait.Slider
@@ -22,7 +22,7 @@ provides: [LSD.Widget.Scrollbar]
 
 LSD.Widget.Scrollbar = new Class({
   Includes: [
-    LSD.Widget.Paint,
+    LSD.Widget,
     LSD.Trait.Slider
   ],
   

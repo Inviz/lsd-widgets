@@ -10,7 +10,7 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD/LSD.Widget.Paint
+- LSD/LSD.Widget
 - LSD.Widget.Button
 - LSD.Widget.Container
 - LSD/LSD.Trait.Menu
@@ -30,7 +30,7 @@ provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option
 LSD.Widget.Select = new Class({
   
   Includes: [
-    LSD.Widget.Paint,
+    LSD.Widget,
     LSD.Trait.Menu.Stateful,
     LSD.Trait.List,
     LSD.Trait.Choice,
@@ -90,7 +90,7 @@ LSD.Widget.Select.Button = new Class({
 
 LSD.Widget.Select.Option = new Class({
   Includes: [
-    LSD.Widget.Paint,
+    LSD.Widget,
     LSD.Trait.Value,
     LSD.Trait.Item.Stateful
   ],

@@ -12,7 +12,7 @@ authors: Yaroslaff Fedin
 requires:
 - LSD.Widget.Input
 - LSD.Widget.Button
-- LSD/LSD.Widget.Paint
+- LSD/LSD.Widget
 - LSD/LSD.Trait.Slider
 - LSD/LSD.Mixin.Focus
 - LSD/LSD.Trait.Accessibility
@@ -24,7 +24,7 @@ provides: [LSD.Widget.Input.Range]
 
 LSD.Widget.Input.Range = new Class({
   Includes: [
-    LSD.Widget.Paint,
+    LSD.Widget,
     LSD.Trait.Slider,
     LSD.Trait.Accessibility
   ],
