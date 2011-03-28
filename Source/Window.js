@@ -11,7 +11,6 @@ authors: Yaroslaff Fedin
  
 requires:
 - LSD/LSD.Widget
-- LSD/LSD.Trait.Animation
  
 provides: [LSD.Widget.Window]
  
@@ -19,11 +18,7 @@ provides: [LSD.Widget.Window]
 */
 
 LSD.Widget.Window = new Class({
-  
-  Includes: [
-    LSD.Widget,
-    LSD.Trait.Animation
-  ],
+  Extemds: LSD.Widget,
   
   States: {
     'closed': ['close', 'open'],

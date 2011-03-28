@@ -12,7 +12,6 @@ authors: Yaroslaff Fedin
 requires:
   - LSD.Widget.Menu
   - LSD/LSD.Trait.Item
-  - LSD/LSD.Trait.Animation
 
 provides:
   - LSD.Widget.Menu.Context
@@ -25,10 +24,7 @@ provides:
 ...
 */
 LSD.Widget.Menu.Context = new Class({
-  Includes: [
-    LSD.Widget.Menu,
-    LSD.Trait.Animation
-  ],
+  Extends: LSD.Widget.Menu,
 
   options: { 
     attributes: {
