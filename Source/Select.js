@@ -40,33 +40,29 @@ LSD.Widget.Select = new Class({
   
   options: {
     tag: 'select',
-    layout: {
-      item: '^option',
-      children: {
-        '^button': {}
-      }
-    },
     events: {
-      element: {
-        click: 'expand'
-      },
-      self: {
-        set: function(item) {
-          this.setValue(item.getValue());
-          this.collapse();
+      _select: {
+        element: {
+          click: 'expand'
         },
-        collapse: 'forgetChosenItem'
+        self: {
+          set: function(item) {
+            this.setValue(item.getValue());
+            this.collapse();
+          },
+          collapse: 'forgetChosenItem'
+        }
       },
       _items: {
         element: {
           'mouseover:on(option)': function() {
             if (!this.chosen) this.listWidget.selectItem(this, true)
           },
-          'click:on(option)': function(e) {
+          'click:on(option)': function(event) {
             if (!this.selected) {
               this.listWidget.selectItem(this);
-              e.stop()
             } else this.listWidget.collapse();
+            if (event) event.preventDefault()
             this.forget()
           }
         }
@@ -79,7 +75,21 @@ LSD.Widget.Select = new Class({
       position: 'focus',
       width: 'adapt'
     },
-    writable: true
+    writable: true,
+    has: {
+      many: {
+        items: {
+          selector: 'option',
+          layout: 'select-option'
+        }
+      },
+      one: {
+        button: {
+          selector: 'button',
+          layout: 'select-button'
+        }
+      }
+    }
   }
 });
 

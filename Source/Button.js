@@ -25,6 +25,9 @@ LSD.Widget.Button = new Class({
 
   options: {
     tag: 'button',
+    element: {
+      tag: 'span'
+    },
     label: '',
     pseudos: Array.fast('touchable')
   },
