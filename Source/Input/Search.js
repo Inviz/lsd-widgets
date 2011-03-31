@@ -11,8 +11,8 @@ authors: Yaroslaff Fedin
  
 requires:
 - LSD.Widget.Input
-- LSD.Widget.Container
 - LSD.Widget.Button
+- LSD/LSD.Native
 - LSD/LSD.Trait.Menu
 - LSD/LSD.Trait.List
 - LSD/LSD.Trait.Choice
@@ -29,7 +29,6 @@ provides: [LSD.Widget.Input.Search]
 LSD.Widget.Input.Search = new Class({
   Includes: [
     LSD.Widget.Input,
-    LSD.Trait.Expectations,
     LSD.Trait.Proxies,
     LSD.Trait.Menu.Stateful,
     LSD.Trait.List,
@@ -115,7 +114,7 @@ LSD.Widget.Input.Search = new Class({
 });
 
 LSD.Widget.Input.Option = LSD.Widget.Input.Search.Option = new Class({
-  Extends: LSD.Widget.Container,
+  Extends: LSD.Native,
     
   States: {
     chosen: ['choose', 'forget']
