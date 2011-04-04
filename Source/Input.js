@@ -12,7 +12,6 @@ authors: Yaroslaff Fedin
 requires:
   - LSD/LSD.Widget
   - LSD/LSD.Trait.Input
-  - LSD/LSD.Trait.Field
   - LSD/LSD.Mixin.Focus
 
 provides: 
@@ -21,24 +20,18 @@ provides:
 ...
 */
 LSD.Widget.Input = new Class({
-  States: {
-    'focused': ['focus', 'blur']
-  },
-  
   Includes: [
     LSD.Widget,
-    LSD.Trait.Input,
-    LSD.Trait.Field
+    LSD.Trait.Input
   ],
   
   options: {
     tag: 'input',
-
     attributes: {
       type: 'text'
     },
-    
-    focusable: false,    
+    focusable: false, 
+    writable: true,
     events: {
       _input: {
         focus: function() {
@@ -48,7 +41,8 @@ LSD.Widget.Input = new Class({
           this.input.blur();
         }
       }
-    }
+    },
+    states: Array.fast('focused')
   },
   
   retain: function() {
@@ -60,3 +54,5 @@ LSD.Widget.Input = new Class({
     this.input.set('value', item);
   }
 });
+
+LSD.Widget.Input.prototype.addState('focused');

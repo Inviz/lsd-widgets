@@ -11,7 +11,6 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD.Widget.Menu
-  - LSD/LSD.Trait.Item
 
 provides:
   - LSD.Widget.Menu.Context
@@ -38,10 +37,7 @@ LSD.Widget.Menu.Context = new Class({
 });
 
 LSD.Widget.Menu.Context.Command = new Class({
-  Includes: [
-    LSD.Widget.Menu.Command,
-    LSD.Trait.Item.Stateful
-  ]
+  Extends: LSD.Widget.Menu.Command
 });
 
 !function(Context) {

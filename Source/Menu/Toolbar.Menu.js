@@ -11,9 +11,8 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD.Widget.Menu.Toolbar
-  - LSD/LSD.Trait.Menu.Stateful
+  - LSD/LSD.Trait.Menu
   - LSD/LSD.Trait.List
-  - LSD/LSD.Trait.Item.Stateful
   - LSD/LSD.Trait.Accessibility
   - LSD/LSD.Trait.Proxies
 
@@ -26,9 +25,8 @@ provides:
 LSD.Widget.Menu.Toolbar.Menu = new Class({
   Includes: [
     LSD.Widget.Button,
-    LSD.Trait.Menu.Stateful,
-    LSD.Trait.List, //Look ma, list and item at once!
-    LSD.Trait.Item.Stateful,
+    LSD.Trait.Menu,
+    LSD.Trait.List,
     LSD.Trait.Accessibility,
     LSD.Trait.Proxies
   ],

@@ -30,17 +30,12 @@ LSD.Widget.Input.Search = new Class({
   Includes: [
     LSD.Widget.Input,
     LSD.Trait.Proxies,
-    LSD.Trait.Menu.Stateful,
+    LSD.Trait.Menu,
     LSD.Trait.List,
     LSD.Trait.Choice,
     LSD.Trait.Value,
-    LSD.Trait.Observer.Stateful
+    LSD.Trait.Observer
   ],
-  
-  States: {
-    'detailed': ['enrich', 'clean'],
-    'uniconed': ['uniconize', 'iconize']
-  },
   
   options: {
     tag: 'input',
@@ -69,6 +64,16 @@ LSD.Widget.Input.Search = new Class({
               this.clean();
             }
           }
+        }
+      },
+      states: {
+        'detailed': {
+          enabler: 'enrich', 
+          disabler: 'clean'
+        },
+        'uniconed': {
+          enabler: 'uniconize',
+          disabler: 'iconize'
         }
       }
     },
@@ -115,10 +120,6 @@ LSD.Widget.Input.Search = new Class({
 
 LSD.Widget.Input.Option = LSD.Widget.Input.Search.Option = new Class({
   Extends: LSD.Native,
-    
-  States: {
-    chosen: ['choose', 'forget']
-  },
   
   options: {
     tag: 'option',
@@ -127,7 +128,8 @@ LSD.Widget.Input.Option = LSD.Widget.Input.Search.Option = new Class({
         click: 'select',
         mousemove: 'chooseOnHover'
       }
-    }
+    },
+    states: Array.fast('chosen')
   },
   
   render: function() {

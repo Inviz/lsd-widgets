@@ -36,7 +36,8 @@ LSD.Widget.Menu.Command = new Class({
     tag: 'command',
     element: {
       tag: 'command'
-    }
+    },
+    pseudos: Array.fast('item')
   }
 });
 

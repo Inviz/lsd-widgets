@@ -11,7 +11,6 @@ authors: Yaroslaff Fedin
  
 requires:
 - LSD.Widget.Menu
-- LSD/LSD.Trait.Item
 - LSD/LSD.Trait.List
 - LSD/LSD.Mixin.Focus
 - LSD/LSD.Trait.Accessibility
@@ -53,10 +52,7 @@ LSD.Widget.Menu.List = new Class({
     
 
 LSD.Widget.Menu.List.Option = new Class({
-  Includes: [
-    LSD.Widget,
-    LSD.Trait.Item.Stateful
-  ],
+  Extends: LSD.Widget,
   
   options: {
     tag: 'option'

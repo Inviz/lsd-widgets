@@ -20,14 +20,23 @@ provides: [LSD.Widget.Window]
 LSD.Widget.Window = new Class({
   Extemds: LSD.Widget,
   
-  States: {
-    'closed': ['close', 'open'],
-    'collapsed': ['collapse', 'expand'],
-    'minified': ['minify', 'enlarge', 'mutate']
-  },
-  
   options: {
-    tag: 'window'
+    tag: 'window',
+    states: {
+      closed: {
+        enabler: 'close',
+        disabler: 'open'
+      },
+      collapsed: {
+        enabler: 'collapse',
+        disabler: 'expand'
+      },
+      minified: {
+        enabler: 'minify',
+        disabler: 'enlarge',
+        toggler: 'mutate'
+      }
+    }
   }
   
 });

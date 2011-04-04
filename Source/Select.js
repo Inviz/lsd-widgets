@@ -14,7 +14,6 @@ requires:
 - LSD.Widget.Button
 - LSD/LSD.Trait.Menu
 - LSD/LSD.Trait.List
-- LSD/LSD.Trait.Item
 - LSD/LSD.Trait.Choice
 - LSD/LSD.Trait.Value
 - LSD/LSD.Mixin.Focus
@@ -30,7 +29,7 @@ LSD.Widget.Select = new Class({
   
   Includes: [
     LSD.Widget,
-    LSD.Trait.Menu.Stateful,
+    LSD.Trait.Menu,
     LSD.Trait.List,
     LSD.Trait.Choice,
     LSD.Trait.Value,
@@ -52,20 +51,6 @@ LSD.Widget.Select = new Class({
           },
           collapse: 'forgetChosenItem'
         }
-      },
-      _items: {
-        element: {
-          'mouseover:on(option)': function() {
-            if (!this.chosen) this.listWidget.selectItem(this, true)
-          },
-          'click:on(option)': function(event) {
-            if (!this.selected) {
-              this.listWidget.selectItem(this);
-            } else this.listWidget.collapse();
-            if (event) event.preventDefault()
-            this.forget()
-          }
-        }
       }
     },
     shortcuts: {
@@ -79,8 +64,17 @@ LSD.Widget.Select = new Class({
     has: {
       many: {
         items: {
-          selector: 'option',
-          layout: 'select-option'
+          layout: 'select-option',
+          relay: {
+            mouseover: function() {
+              if (!this.chosen) this.listWidget.selectItem(this, true)
+            },
+            click: function(event) {
+              if (!this.select()) this.listWidget.collapse();
+              if (event) event.stop();
+              this.forget();
+            }
+          }
         }
       },
       one: {
@@ -90,6 +84,10 @@ LSD.Widget.Select = new Class({
         }
       }
     }
+  },
+  
+  applyValue: function(value) {
+    this.setContent(value);
   }
 });
 
@@ -100,19 +98,13 @@ LSD.Widget.Select.Button = new Class({
 LSD.Widget.Select.Option = new Class({
   Includes: [
     LSD.Widget,
-    LSD.Trait.Value,
-    LSD.Trait.Item.Stateful
+    LSD.Trait.Value
   ],
   
-  States: {
-    chosen: ['choose', 'forget']
-  },
-  
   options: {
-    tag: 'option'
-  },
-  
-  setContent: function() {
-    return (this.value = this.parent.apply(this, arguments));
+    tag: 'option',
+    pseudos: Array.fast('item')
   }
 });
+
+LSD.Widget.Select.Option.prototype.addState('chosen');
