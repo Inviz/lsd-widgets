@@ -27,11 +27,8 @@ LSD.Widget.Menu.Context = new Class({
 
   options: { 
     attributes: {
-      type: 'context'
-    },
-    
-    animation: {
-      duration: 200
+      type: 'context',
+      tabindex: 0
     }
   }
 });

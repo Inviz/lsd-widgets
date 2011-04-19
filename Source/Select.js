@@ -78,6 +78,13 @@ LSD.Widget.Select = new Class({
         }
       },
       one: {
+        menu: {
+          proxy: function(widget) {
+            if (!widget.pseudos.item) return;
+            if (!this.selectedItem || widget.pseudos.selected) this.selectItem(widget)
+            return true;
+          }
+        },
         button: {
           selector: 'button',
           layout: 'select-button'
@@ -107,4 +114,4 @@ LSD.Widget.Select.Option = new Class({
   }
 });
 
-LSD.Widget.Select.Option.prototype.addState('chosen');
+LSD.Widget.Select.Option.prototype.addStates('chosen', 'selected');
