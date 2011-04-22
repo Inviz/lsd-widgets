@@ -32,7 +32,7 @@ LSD.Widget.Button = new Class({
     pseudos: Array.fast('touchable')
   },
   
-  setContent: function(content) {
+  write: function(content) {
     this.setState('text');
     return this.parent.apply(this, arguments);
   }

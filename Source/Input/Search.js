@@ -16,7 +16,6 @@ requires:
 - LSD/LSD.Trait.Menu
 - LSD/LSD.Trait.List
 - LSD/LSD.Trait.Choice
-- LSD/LSD.Trait.Value
 - LSD/LSD.Trait.Observer
 - LSD/LSD.Trait.Accessibility
 - LSD/LSD.Trait.Proxies
@@ -33,7 +32,6 @@ LSD.Widget.Input.Search = new Class({
     LSD.Trait.Menu,
     LSD.Trait.List,
     LSD.Trait.Choice,
-    LSD.Trait.Value,
     LSD.Trait.Observer
   ],
   

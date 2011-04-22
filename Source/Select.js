@@ -15,7 +15,6 @@ requires:
 - LSD/LSD.Trait.Menu
 - LSD/LSD.Trait.List
 - LSD/LSD.Trait.Choice
-- LSD/LSD.Trait.Value
 - LSD/LSD.Mixin.Focus
 - LSD/LSD.Trait.Accessibility
 - LSD/LSD.Trait.Proxies
@@ -32,7 +31,6 @@ LSD.Widget.Select = new Class({
     LSD.Trait.Menu,
     LSD.Trait.List,
     LSD.Trait.Choice,
-    LSD.Trait.Value,
     LSD.Trait.Accessibility,
     LSD.Trait.Proxies
   ],
@@ -47,6 +45,7 @@ LSD.Widget.Select = new Class({
         self: {
           set: function(item) {
             this.setValue(item.getValue());
+            this.write(item.getTitle())
             this.collapse();
           },
           collapse: 'forgetChosenItem'
@@ -61,6 +60,9 @@ LSD.Widget.Select = new Class({
       width: 'adapt'
     },
     writable: true,
+    layout: {
+      children: Array.fast('::button')
+    },
     has: {
       many: {
         items: {
@@ -81,7 +83,7 @@ LSD.Widget.Select = new Class({
         menu: {
           proxy: function(widget) {
             if (!widget.pseudos.item) return;
-            if (!this.selectedItem || widget.pseudos.selected) this.selectItem(widget)
+            if (!this.getSelectedItem() || widget.pseudos.selected) this.selectItem(widget)
             return true;
           }
         },
@@ -91,10 +93,6 @@ LSD.Widget.Select = new Class({
         }
       }
     }
-  },
-  
-  applyValue: function(value) {
-    this.setContent(value);
   }
 });
 
@@ -111,6 +109,10 @@ LSD.Widget.Select.Option = new Class({
   options: {
     tag: 'option',
     pseudos: Array.fast('item')
+  },
+  
+  getTitle: function() {
+    return this.getValue();
   }
 });
 
