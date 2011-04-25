@@ -14,7 +14,6 @@ requires:
   - LSD/LSD.Trait.Menu
   - LSD/LSD.Trait.List
   - LSD/LSD.Trait.Accessibility
-  - LSD/LSD.Trait.Proxies
 
 provides:
   - LSD.Widget.Menu.Toolbar.Menu
@@ -27,8 +26,7 @@ LSD.Widget.Menu.Toolbar.Menu = new Class({
     LSD.Widget.Button,
     LSD.Trait.Menu,
     LSD.Trait.List,
-    LSD.Trait.Accessibility,
-    LSD.Trait.Proxies
+    LSD.Trait.Accessibility
   ],
   
   options: {
@@ -69,7 +67,7 @@ LSD.Widget.Menu.Toolbar.Menu = new Class({
     this.parent.apply(this, arguments);
     if (this.attributes.label && this.attributes.label != this.label) {
       this.label = this.attributes.label;
-      this.setContent(this.label)
+      this.write(this.label)
     }
   },
   

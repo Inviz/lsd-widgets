@@ -14,7 +14,6 @@ requires:
 - LSD/LSD.Trait.List
 - LSD/LSD.Mixin.Focus
 - LSD/LSD.Trait.Accessibility
-- LSD/LSD.Trait.Proxies
 
 provides:
 - LSD.Widget.Menu.List
@@ -26,8 +25,7 @@ LSD.Widget.Menu.List = new Class({
   Includes: [
     LSD.Widget.Menu,
     LSD.Trait.List,
-    LSD.Trait.Accessibility,
-    LSD.Trait.Proxies
+    LSD.Trait.Accessibility
   ],
   
   options: {

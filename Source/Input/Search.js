@@ -18,7 +18,6 @@ requires:
 - LSD/LSD.Trait.Choice
 - LSD/LSD.Trait.Observer
 - LSD/LSD.Trait.Accessibility
-- LSD/LSD.Trait.Proxies
 
 provides: [LSD.Widget.Input.Search]
  
@@ -28,7 +27,6 @@ provides: [LSD.Widget.Input.Search]
 LSD.Widget.Input.Search = new Class({
   Includes: [
     LSD.Widget.Input,
-    LSD.Trait.Proxies,
     LSD.Trait.Menu,
     LSD.Trait.List,
     LSD.Trait.Choice,
