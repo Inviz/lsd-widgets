@@ -32,6 +32,13 @@ LSD.Widget.Input.Radio = new Class({
     command: {
       type: 'radio'
     },
+    events: {
+      enabled: {
+        element: {
+          click: 'click'
+        }
+      }
+    },
     writable: true
   }
 });
