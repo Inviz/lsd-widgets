@@ -16,8 +16,6 @@ requires:
 - LSD/LSD.Trait.List
 - LSD/LSD.Trait.Choice
 - LSD/LSD.Mixin.Focus
-- LSD/LSD.Trait.Accessibility
-- LSD/LSD.Trait.Proxies
 
 provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option]
  
@@ -30,9 +28,7 @@ LSD.Widget.Select = new Class({
     LSD.Widget,
     LSD.Trait.Menu,
     LSD.Trait.List,
-    LSD.Trait.Choice,
-    LSD.Trait.Accessibility,
-    LSD.Trait.Proxies
+    LSD.Trait.Choice
   ],
   
   options: {
