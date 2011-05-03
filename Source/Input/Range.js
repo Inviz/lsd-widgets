@@ -36,8 +36,14 @@ LSD.Widget.Input.Range = new Class({
       previous: 'decrement'
     },
     layout: {
-      children: {
-        '>thumb[shape=arrow]#thumb': {}
+      children: Array.fast('::thumb')
+    },
+    has: {
+      one: {
+        thumb: {
+          selector: 'thumb',
+          layout: 'input-range-thumb'
+        }
       }
     },
     writable: true
