@@ -11,7 +11,6 @@ authors: Yaroslaff Fedin
  
 requires:
 - LSD/LSD.Widget
-- LSD.Widget.Section
 - LSD.Widget.Button
 - LSD/LSD.Trait.Slider
 
@@ -119,7 +118,7 @@ LSD.Widget.Scrollbar = new Class({
 })
 
 LSD.Widget.Scrollbar.Track = new Class({
-  Extends: LSD.Widget.Section,
+  Extends: LSD.Widget,
   
   options: {
     tag: 'track'
