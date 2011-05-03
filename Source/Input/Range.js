@@ -15,7 +15,6 @@ requires:
 - LSD/LSD.Widget
 - LSD/LSD.Trait.Slider
 - LSD/LSD.Mixin.Focus
-- LSD/LSD.Trait.Accessibility
 
 provides: [LSD.Widget.Input.Range]
  
@@ -25,8 +24,7 @@ provides: [LSD.Widget.Input.Range]
 LSD.Widget.Input.Range = new Class({
   Includes: [
     LSD.Widget,
-    LSD.Trait.Slider,
-    LSD.Trait.Accessibility
+    LSD.Trait.Slider
   ],
   
   options: {

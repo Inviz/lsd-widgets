@@ -13,7 +13,6 @@ requires:
 - LSD.Widget.Input
 - LSD/LSD.Mixin.Touchable
 - LSD/LSD.Mixin.Focus
-- LSD/LSD.Trait.Accessibility
 
 provides: [LSD.Widget.Input.Checkbox]
  
