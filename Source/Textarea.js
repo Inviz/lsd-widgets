@@ -10,18 +10,19 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD.Widget.Input
+  - LSD.Widget.Input
 
-provides: [LSD.Widget.Textarea]
+provides:   
+  - LSD.Widget.Textarea
  
 ...
 */
 
-LSD.Widget.Textarea = new Class({
+LSD.Widget.define('Textarea', {
   Extends: LSD.Widget.Input,
-  
+    
   options: {
-    tag: 'textarea',
+    tag: 'textarea'
   },
   
   getInput: function() {

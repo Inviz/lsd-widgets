@@ -22,11 +22,10 @@ provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option
 ...
 */
 
-LSD.Widget.Select = new Class({
+LSD.Widget.define('Select', {
+  Extends: LSD.Trait.Menu,
   
-  Includes: [
-    LSD.Widget,
-    LSD.Trait.Menu,
+  Implements: [
     LSD.Trait.List,
     LSD.Trait.Choice
   ],
@@ -92,24 +91,18 @@ LSD.Widget.Select = new Class({
   }
 });
 
-LSD.Widget.Select.Button = new Class({
+LSD.Widget.define('Select.Button', {
   Extends: LSD.Widget.Button
 });
 
-LSD.Widget.Select.Option = new Class({
-  Includes: [
-    LSD.Widget,
-    LSD.Trait.Value
-  ],
-  
+LSD.Widget.define('Select.Option', {
   options: {
     tag: 'option',
-    pseudos: Array.fast('item')
+    pseudos: Array.fast('item'),
+    states: Array.fast('chosen', 'selector')
   },
   
   getTitle: function() {
     return this.getValue();
   }
 });
-
-LSD.Widget.Select.Option.prototype.addStates('chosen', 'selected');

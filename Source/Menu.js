@@ -18,29 +18,17 @@ provides:
 ...
 */
 
-LSD.Widget.Menu = new Class({
-  Extends: LSD.Widget,
-  
+LSD.Widget.define('Menu', {
   options: {
     tag: 'menu',
-    element: {
-      tag: 'menu'
-    }
+    inline: null
   }
 });
 
-LSD.Widget.Menu.Command = new Class({
-  Extends: LSD.Widget,
-  
+LSD.Widget.define('Menu.Command', {
   options: {
     tag: 'command',
-    element: {
-      tag: 'command'
-    },
+    inline: null,
     pseudos: Array.fast('item')
   }
 });
-
-!function(Command) {
-  Command.Command = Command.Checkbox = Command.Radio = Command;
-}(LSD.Widget.Menu.Command);

@@ -19,22 +19,28 @@ provides:
 ...
 */
 
-LSD.Widget.Button = new Class({
-
-  Extends: LSD.Widget,
-
+LSD.Widget.define('Button', {  
   options: {
     tag: 'button',
-    element: {
-      tag: 'span'
-    },
-    label: '',
-    pseudos: Array.fast('touchable')
+    inline: true,
+    pseudos: Array.fast('touchable'),
+    events: {
+      _button: {
+        element: {
+          click: 'click'
+        }
+      }
+    }
   },
   
   write: function(content) {
     this.setState('text');
     return this.parent.apply(this, arguments);
+  },
+  
+  click: function(event) {
+    if (event && event.preventDefault) event.preventDefault();
+    if (!this.disabled) return this.parent.apply(this, arguments);
   }
 
 });

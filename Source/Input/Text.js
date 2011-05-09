@@ -10,11 +10,12 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD.Widget.Input
+  - LSD.Widget.Input
 
-provides: [LSD.Widget.Input.Text]
+provides: 
+  - LSD.Widget.Input.Text
  
 ...
 */
 
-LSD.Widget.Input.Text = LSD.Widget.Input;
+LSD.Widget.define('Input.Text', LSD.Widget.Input);

@@ -19,11 +19,9 @@ provides:
  
 ...
 */
-LSD.Widget.Input = new Class({
-  Includes: [
-    LSD.Widget,
-    LSD.Trait.Input
-  ],
+
+LSD.Widget.define('Input', {
+  Extends: LSD.Trait.Input,
   
   options: {
     tag: 'input',
@@ -52,7 +50,14 @@ LSD.Widget.Input = new Class({
   
   applyValue: function(item) {
     this.input.set('value', item);
-  }
-});
+  },
 
-LSD.Widget.Input.prototype.addState('focused');
+  getRawValue: function() {
+    return ('value' in this.attributes) && this.element.get('value');
+  },
+
+  focus: function() {
+    this.element.focus();
+  }
+
+});

@@ -22,7 +22,8 @@ provides:
  
 ...
 */
-LSD.Widget.Menu.Context = new Class({
+
+LSD.Widget.define('Menu.Context', {
   Extends: LSD.Widget.Menu,
 
   options: { 
@@ -33,13 +34,6 @@ LSD.Widget.Menu.Context = new Class({
   }
 });
 
-LSD.Widget.Menu.Context.Command = new Class({
+LSD.Widget.define('Menu.Context.Command', {
   Extends: LSD.Widget.Menu.Command
 });
-
-!function(Context) {
-  Context.Button = Context.Option = Context.Radio = Context.Checkbox = Context.Command.Command = Context.Command;
-}(LSD.Widget.Menu.Context);
-
-    
-

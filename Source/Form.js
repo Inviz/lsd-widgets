@@ -10,28 +10,36 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD/LSD.Widget
+  - LSD/LSD.Widget
+  - LSD/LSD.Trait.Form
+  - LSD/LSD.Trait.Fieldset
 
-provides: [LSD.Widget.Form]
+provides: 
+  - LSD.Widget.Form
  
 ...
 */
 
-LSD.Widget.Form = new Class({
-  Extends: LSD.Widget,
-
+LSD.Widget.define('Form', {
+  Implements: [
+    LSD.Trait.Fieldset,
+    LSD.Trait.Form
+  ],
+  
   options: {
     tag: 'form',
-    element: {
-      tag: 'form'
-    },
-    layers: {},
     events: {
       element: {
-        submit: function() {
-          return false
+        submit: 'submit'
+      },
+      self: {
+        build: function() {
+          // novalidate html attribute disables internal form validation 
+          // on form submission. Chrome and Safari will block form 
+          // submission without any visual clues otherwise.
+          if (this.element.get('tag') == 'form') this.element.setProperty('novalidate', true);
         }
       }
     }
-  }  
+  }
 });

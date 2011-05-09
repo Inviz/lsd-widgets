@@ -22,13 +22,13 @@ provides:
  
 ...
 */
-LSD.Widget.Menu.Toolbar.Menu = new Class({
-  Includes: [
-    LSD.Widget.Button,
+
+LSD.Widget.define('Menu.Toolbar.Menu', {
+  Extends: LSD.Widget.Button,
+  
+  Implements: [
     LSD.Trait.Menu,
-    LSD.Trait.List,
-    LSD.Trait.Accessibility,
-    LSD.Trait.Proxies
+    LSD.Trait.List
   ],
   
   options: {
@@ -82,5 +82,3 @@ LSD.Widget.Menu.Toolbar.Menu = new Class({
 LSD.Widget.Menu.Toolbar.Menu.Label = new Class({
   Extends: LSD.Widget.Button
 });
-
-LSD.Widget.Menu.Toolbar.Menu.Command = LSD.Widget.Menu.Context.Command;

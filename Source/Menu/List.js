@@ -22,13 +22,11 @@ provides:
  
 ...
 */
-LSD.Widget.Menu.List = new Class({
-  Includes: [
-    LSD.Widget.Menu,
-    LSD.Trait.List,
-    LSD.Trait.Accessibility,
-    LSD.Trait.Proxies
-  ],
+
+LSD.Widget.define('Menu.List', {
+  Extends: LSD.Widget.Menu,
+  
+  Implements: LSD.Trait.List,
   
   options: {
     attributes: {
@@ -36,6 +34,9 @@ LSD.Widget.Menu.List = new Class({
     },
     layout: {
       item: 'menu-list-item'
+    },
+    mutations: {
+      '> button, > li, > command, > option': 'menu-list-option'
     },
     events: {
       self: {
@@ -50,13 +51,10 @@ LSD.Widget.Menu.List = new Class({
   }
 });
     
-
-LSD.Widget.Menu.List.Option = new Class({
+LSD.Widget.define('Menu.List.Option', {
   Extends: LSD.Widget,
   
   options: {
     tag: 'option'
   }
 });
-
-LSD.Widget.Menu.List.Button = LSD.Widget.Menu.List.Li = LSD.Widget.Menu.List.Command = LSD.Widget.Menu.List.Option;

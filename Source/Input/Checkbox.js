@@ -18,9 +18,7 @@ provides: [LSD.Widget.Input.Checkbox]
  
 ...
 */
-LSD.Widget.Input.Checkbox = new Class({
-  Extends: LSD.Widget,
-  
+LSD.Widget.define('Input.Checkbox', {
   options: {
     tag: 'input',
     shortcuts: {

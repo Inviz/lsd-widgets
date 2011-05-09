@@ -21,12 +21,11 @@ provides:
  
 ...
 */
-LSD.Widget.Menu.Toolbar = new Class({
-  Includes: [
-    LSD.Widget.Menu,
-    LSD.Trait.List,
-    LSD.Trait.Accessibility
-  ],
+
+LSD.Widget.define('Menu.Toolbar', {
+  Extends: LSD.Widget.Menu,
+  
+  Implements: LSD.Trait.List,
   
   options: {
     attributes: {

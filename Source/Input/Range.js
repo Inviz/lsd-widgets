@@ -21,11 +21,8 @@ provides: [LSD.Widget.Input.Range]
 ...
 */
 
-LSD.Widget.Input.Range = new Class({
-  Includes: [
-    LSD.Widget,
-    LSD.Trait.Slider
-  ],
+LSD.Widget.define('Input.Range', {
+  Extends: LSD.Trait.Slider,
   
   options: {
     tag: 'input',
@@ -48,7 +45,6 @@ LSD.Widget.Input.Range = new Class({
   },
   
   initialize: function() {
-    //delete this.options.events.focus.element.mousedown;
     this.parent.apply(this, arguments);
     this.addPseudo(this.options.mode);
   },
@@ -58,7 +54,7 @@ LSD.Widget.Input.Range = new Class({
   }
 });
 
-LSD.Widget.Input.Range.Thumb = new Class({
+LSD.Widget.define('Input.Range.Thumb', {
   Extends: LSD.Widget.Button,
     
   options: {

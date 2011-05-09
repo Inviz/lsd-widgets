@@ -20,9 +20,7 @@ provides: [LSD.Widget.Input.Radio]
 ...
 */
 
-LSD.Widget.Input.Radio = new Class({
-  Extends: LSD.Widget,
-  
+LSD.Widget.define('Input.Radio', {
   options: {
     tag: 'input',
     shortcuts: {
