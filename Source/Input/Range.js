@@ -49,6 +49,7 @@ LSD.Widget.Input.Range = new Class({
 
   onSet: function() {
     this.focus();
+    this.setValue(arguments[0]);
   }
 });
 
