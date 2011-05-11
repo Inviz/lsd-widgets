@@ -30,9 +30,7 @@ LSD.Widget.define('Input.Range', {
       next: 'increment',
       previous: 'decrement'
     },
-    layout: {
-      children: Array.fast('::thumb')
-    },
+    layout: Array.fast('::thumb'),
     has: {
       one: {
         thumb: {

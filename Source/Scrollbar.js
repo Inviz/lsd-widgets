@@ -35,13 +35,11 @@ LSD.Widget.define('Scrollbar', {
       }
     },
     layout: {
-      children: {
-        '^track#track': {
-          'scrollbar-thumb#thumb': {},
-        },
-        '^button#decrementor': {},
-        '^button#incrementor': {}
-      }
+      '^track#track': {
+        'scrollbar-thumb#thumb': {},
+      },
+      '^button#decrementor': {},
+      '^button#incrementor': {}
     },
     slider: {
       wheel: true

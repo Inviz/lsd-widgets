@@ -32,8 +32,12 @@ LSD.Widget.define('Menu.Toolbar.Menu', {
   ],
   
   options: {
-    layout: {
-      item: 'menu-context-item'
+    has: {
+      many: {
+        items: {
+          layout: 'menu-context-item'
+        }
+      }
     },
     events: {
       element: {

@@ -55,9 +55,7 @@ LSD.Widget.define('Select', {
       width: 'adapt'
     },
     writable: true,
-    layout: {
-      children: Array.fast('::button')
-    },
+    layout: Array.fast('::button'),
     has: {
       many: {
         items: {

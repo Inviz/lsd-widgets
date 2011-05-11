@@ -34,10 +34,7 @@ LSD.Native.Anchor = new Class({
     request: {
       type: 'form'
     },
-    layout: {
-      render: false,
-      extract: true
-    }
+    render: false
   },
 
   click: function(event) {

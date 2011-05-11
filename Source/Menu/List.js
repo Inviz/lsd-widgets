@@ -32,11 +32,15 @@ LSD.Widget.define('Menu.List', {
     attributes: {
       type: 'list'
     },
-    layout: {
-      item: 'menu-list-item'
-    },
     mutations: {
       '> button, > li, > command, > option': 'menu-list-option'
+    },
+    has: {
+      many: {
+        items: {
+          layout: 'menu-list-item'
+        }
+      }
     },
     events: {
       self: {
