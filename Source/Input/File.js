@@ -21,7 +21,10 @@ provides:
 
 
 LSD.Widget.Input.File = new Class({
-  Extends: LSD.Widget.Input, 
+  Includes: [
+    LSD.Widget.Input, 
+    LSD.Mixin.Uploader
+  ],
   
   options: {
     uploader: {
@@ -31,7 +34,8 @@ LSD.Widget.Input.File = new Class({
       timeLimit: 36000,
       queued: false,
       fieldName: 'blob',
-      method: 'post'
+      method: 'post',
+      multiple: false
     },
     pseudos: Array.fast('uploading')
   },

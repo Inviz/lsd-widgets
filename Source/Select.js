@@ -45,7 +45,7 @@ LSD.Widget.Select = new Class({
             this.collapse();
           },
           unset: function(item) {
-            this.unsetValue(item.getValue());
+            this.setValue(item.getValue(), true);
           },
           collapse: 'forgetChosenItem'
         }
