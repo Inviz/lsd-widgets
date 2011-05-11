@@ -16,6 +16,7 @@ sources:
   - Source/Input/Submit.js
   - Source/Input/Text.js
   - Source/Input/File.js
+  - Source/Input/HTML.js
   - Source/Menu.js
   - Source/Menu/Context.js
   - Source/Menu/List.js
