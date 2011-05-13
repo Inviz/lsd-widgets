@@ -97,7 +97,7 @@ LSD.Widget.define('Select.Option', {
   options: {
     tag: 'option',
     pseudos: Array.fast('item'),
-    states: Array.fast('chosen', 'selector')
+    states: Array.fast('chosen', 'selected')
   },
   
   getTitle: function() {
