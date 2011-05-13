@@ -41,6 +41,6 @@ LSD.Widget.Input.Radio = new Class({
 
   click: function(event){
     if (event && event.preventDefault) event.preventDefault();
-    if (!this.disabled) return this.parent.apply(this, arguments);
+    if (!this.checked && !this.disabled) return this.parent.apply(this, arguments);
   }
 });
