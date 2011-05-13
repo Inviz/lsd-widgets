@@ -21,12 +21,14 @@ provides:
 
 
 LSD.Widget.Input.File = new Class({
-  Includes: [
-    LSD.Widget.Input, 
-    LSD.Mixin.Uploader
-  ],
-  
   options: {
+    tag: 'input',
+    attributes: {
+      type: 'file',
+      multiple: true
+    },
+    writable: true,
+    focusable: false,
     uploader: {
       instantStart: true,
       path: '/flashes/Swiff.Uploader.swf',
