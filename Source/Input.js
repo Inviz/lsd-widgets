@@ -28,7 +28,7 @@ LSD.Widget.Input = new Class({
     attributes: {
       type: 'text'
     },
-    focusable: false, 
+    focusable: false,
     writable: true,
     events: {
       _input: {

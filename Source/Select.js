@@ -36,7 +36,7 @@ LSD.Widget.Select = new Class({
         self: {
           set: function(item) {
             this.setValue(item.getValue());
-            this.write(item.getTitle())
+            this.write(item.getTitle());
             this.collapse();
           },
           unset: function(item) {
@@ -59,6 +59,7 @@ LSD.Widget.Select = new Class({
       many: {
         items: {
           layout: 'select-option',
+          mutation: '> option, > li',
           relay: {
             mouseover: function() {
               if (!this.chosen) this.listWidget.chooseItem(this)
@@ -100,6 +101,10 @@ LSD.Widget.Select.Option = new Class({
   },
   
   getTitle: function() {
-    return this.getValue();
+    return this.element.get('text').trim();
+  },
+  
+  getValue: function() {
+    return this.attributes.value || this.element.get('text').trim();
   }
 });
