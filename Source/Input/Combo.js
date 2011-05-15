@@ -19,7 +19,7 @@ provides: [LSD.Widget.Input.Combo]
 ...
 */
 
-LSD.Widget.define('Input.Combo', {
+LSD.Widget.Input.Combo = new Class({
   Extends: LSD.Widget.Select,
   
   Implements: LSD.Trait.Input,

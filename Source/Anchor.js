@@ -10,22 +10,26 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-  - LSD/LSD.Native
+  - LSD/LSD.Widget
   - LSD/LSD.Module.Accessories
   - LSD/LSD.Module.Layout
+  - LSD/LSD.Module.Behavior
+  - LSD/LSD.Module.Expectations
   - LSD/LSD.Mixin.Dialog
+  - LSD/LSD.Mixin.Request
 
 provides: 
-  - LSD.Native.Anchor
+  - LSD.Widget.Anchor
  
 ...
 */
 
-LSD.Native.Anchor = new Class({
+LSD.Widget.Anchor = new Class({
   Implements: [
     LSD.Module.Accessories,
     LSD.Module.Behavior,
     LSD.Module.Layout,
+    LSD.Module.Expectations,
     LSD.Mixin.Request,
     LSD.Mixin.Dialog
   ],
@@ -34,16 +38,18 @@ LSD.Native.Anchor = new Class({
     request: {
       type: 'form'
     },
-    render: false
-  },
-
-  click: function(event) {
-    if (event && event.preventDefault) event.preventDefault();
-    if (!this.disabled) return this.parent.apply(this, arguments);
+    render: false,
+    events: {
+      self: {
+        click: function(e) {
+          e.preventDefault()
+        }
+      }
+    }
   },
 
   initialize: LSD.Module.Options.initialize
 
 });
 
-LSD.Native.Anchor.prototype.addStates('disabled', 'built', 'attached');
+LSD.Widget.Anchor.prototype.addStates('disabled', 'built', 'attached');

@@ -18,7 +18,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Body.Page', {
+LSD.Widget.Body.Page = new Class({
   Extends: LSD.Widget.Body,
   
   options: {

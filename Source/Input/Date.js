@@ -17,7 +17,7 @@ provides: [LSD.Widget.Input.Date]
 ...
 */
 
-LSD.Widget.define('Input.Date', {
+LSD.Widget.Input.Date = new Class({
   Extends: LSD.Widget.Input,
   
   Implements: [

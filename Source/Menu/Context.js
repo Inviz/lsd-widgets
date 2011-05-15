@@ -23,7 +23,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Menu.Context', {
+LSD.Widget.Menu.Context = new Class({
   Extends: LSD.Widget.Menu,
 
   options: { 
@@ -34,6 +34,6 @@ LSD.Widget.define('Menu.Context', {
   }
 });
 
-LSD.Widget.define('Menu.Context.Command', {
+LSD.Widget.Menu.Context.Command = new Class({
   Extends: LSD.Widget.Menu.Command
 });

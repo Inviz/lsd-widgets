@@ -21,7 +21,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Body', {
+LSD.Widget.Body = new Class({
   Extends: LSD.Document, 
   
   Implements: [LSD.Document.Resizable, LSD.Document.Commands],

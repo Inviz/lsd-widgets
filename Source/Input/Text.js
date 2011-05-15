@@ -18,4 +18,4 @@ provides:
 ...
 */
 
-LSD.Widget.define('Input.Text', LSD.Widget.Input);
+LSD.Widget.Input.Text = new Class(LSD.Widget.Input);

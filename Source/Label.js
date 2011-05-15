@@ -18,7 +18,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Label', {
+LSD.Widget.Label = new Class({
   options: {
     tag: 'label',
     has: {

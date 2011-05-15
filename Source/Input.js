@@ -20,7 +20,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Input', {
+LSD.Widget.Input = new Class({
   Extends: LSD.Trait.Input,
   
   options: {

@@ -23,7 +23,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Menu.List', {
+LSD.Widget.Menu.List = new Class({
   Extends: LSD.Widget.Menu,
   
   Implements: LSD.Trait.List,
@@ -55,7 +55,7 @@ LSD.Widget.define('Menu.List', {
   }
 });
     
-LSD.Widget.define('Menu.List.Option', {
+LSD.Widget.Menu.List.Option = new Class({
   Extends: LSD.Widget,
   
   options: {

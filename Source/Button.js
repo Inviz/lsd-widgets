@@ -19,7 +19,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Button', {  
+LSD.Widget.Button = new Class({  
   options: {
     tag: 'button',
     inline: true,

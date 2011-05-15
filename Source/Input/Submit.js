@@ -19,7 +19,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Input.Submit', {
+LSD.Widget.Input.Submit = new Class({
   Extends: LSD.Widget.Button,
   
   options: {

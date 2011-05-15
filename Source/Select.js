@@ -22,7 +22,7 @@ provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option
 ...
 */
 
-LSD.Widget.define('Select', {
+LSD.Widget.Select = new Class({
   Extends: LSD.Trait.Menu,
   
   Implements: [
@@ -89,11 +89,11 @@ LSD.Widget.define('Select', {
   }
 });
 
-LSD.Widget.define('Select.Button', {
+LSD.Widget.Select.Button = new Class({
   Extends: LSD.Widget.Button
 });
 
-LSD.Widget.define('Select.Option', {
+LSD.Widget.Select.Option = new Class({
   options: {
     tag: 'option',
     pseudos: Array.fast('item'),

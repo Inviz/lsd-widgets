@@ -18,7 +18,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Body.Dialog', {
+LSD.Widget.Body.Dialog = new Class({
   Extends: LSD.Widget.Body.Page,
   
   Implements: [LSD.Trait.Fieldset],

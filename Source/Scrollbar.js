@@ -19,7 +19,7 @@ provides: [LSD.Widget.Scrollbar]
 ...
 */
 
-LSD.Widget.define('Scrollbar', {
+LSD.Widget.Scrollbar = new Class({
   Implements: LSD.Trait.Slider,
   
   options: {

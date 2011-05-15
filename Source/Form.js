@@ -20,7 +20,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Form', {
+LSD.Widget.Form = new Class({
   Implements: [
     LSD.Trait.Fieldset,
     LSD.Trait.Form

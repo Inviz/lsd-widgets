@@ -18,14 +18,14 @@ provides:
 ...
 */
 
-LSD.Widget.define('Menu', {
+LSD.Widget.Menu = new Class({
   options: {
     tag: 'menu',
     inline: null
   }
 });
 
-LSD.Widget.define('Menu.Command', {
+LSD.Widget.Menu.Command = new Class({
   options: {
     tag: 'command',
     inline: null,

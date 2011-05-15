@@ -18,7 +18,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Table.Calendar', {
+LSD.Widget.Table.Calendar = new Class({
   Extends: LSD.Widget.Table,
   
   options: {

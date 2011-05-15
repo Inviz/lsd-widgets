@@ -19,7 +19,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Table', {
+LSD.Widget.Table = new Class({
   Implements: [
     LSD.Trait.List
   ],

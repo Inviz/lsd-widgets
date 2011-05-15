@@ -22,7 +22,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Menu.Toolbar', {
+LSD.Widget.Menu.Toolbar = new Class({
   Extends: LSD.Widget.Menu,
   
   Implements: LSD.Trait.List,

@@ -18,7 +18,7 @@ provides:
 ...
 */
 
-LSD.Widget.define('Textarea', {
+LSD.Widget.Textarea = new Class({
   Extends: LSD.Widget.Input,
     
   options: {

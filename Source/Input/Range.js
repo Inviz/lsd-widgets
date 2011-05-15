@@ -21,7 +21,7 @@ provides: [LSD.Widget.Input.Range]
 ...
 */
 
-LSD.Widget.define('Input.Range', {
+LSD.Widget.Input.Range = new Class({
   Extends: LSD.Trait.Slider,
   
   options: {
@@ -52,7 +52,7 @@ LSD.Widget.define('Input.Range', {
   }
 });
 
-LSD.Widget.define('Input.Range.Thumb', {
+LSD.Widget.Input.Range.Thumb = new Class({
   Extends: LSD.Widget.Button,
     
   options: {
