@@ -13,8 +13,8 @@ requires:
 - LSD/LSD.Widget
 - LSD.Widget.Button
 - LSD/LSD.Trait.Menu
-- LSD/LSD.Trait.List
-- LSD/LSD.Trait.Choice
+- LSD/LSD.Mixin.List
+- LSD/LSD.Mixin.Choice
 - LSD/LSD.Mixin.Focus
 
 provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option]
@@ -25,13 +25,9 @@ provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option
 LSD.Widget.Select = new Class({
   Extends: LSD.Trait.Menu,
   
-  Implements: [
-    LSD.Trait.List,
-    LSD.Trait.Choice
-  ],
-  
   options: {
     tag: 'select',
+    pseudos: Array.fast('list', 'choice'),
     events: {
       _select: {
         element: {
@@ -62,7 +58,7 @@ LSD.Widget.Select = new Class({
           layout: 'select-option',
           relay: {
             mouseover: function() {
-              if (!this.chosen) this.listWidget.selectItem(this, true)
+              if (!this.chosen) this.listWidget.chooseItem(this)
             },
             click: function(event) {
               if (!this.select()) this.listWidget.collapse();

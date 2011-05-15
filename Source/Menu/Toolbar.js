@@ -11,10 +11,7 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD.Widget.Menu
-  - LSD.Widget.Button
-  - LSD/LSD.Mixin.Focus
-  - LSD/LSD.Trait.List
-
+  
 provides:
   - LSD.Widget.Menu.Toolbar
 
@@ -24,8 +21,6 @@ provides:
 
 LSD.Widget.Menu.Toolbar = new Class({
   Extends: LSD.Widget.Menu,
-  
-  Implements: LSD.Trait.List,
   
   options: {
     attributes: {

@@ -11,6 +11,9 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD/LSD.Widget
+  - LSD/LSD.Mixin.Focus
+  - LSD/LSD.Mixin.List
+  
 
 provides: 
   - LSD.Widget.Menu
@@ -21,7 +24,8 @@ provides:
 LSD.Widget.Menu = new Class({
   options: {
     tag: 'menu',
-    inline: null
+    inline: null,
+    pseudps: Array.fast('list')
   }
 });
 

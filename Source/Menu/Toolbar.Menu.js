@@ -12,9 +12,6 @@ authors: Yaroslaff Fedin
 requires:
   - LSD.Widget.Menu.Toolbar
   - LSD/LSD.Trait.Menu
-  - LSD/LSD.Trait.List
-  - LSD/LSD.Trait.Accessibility
-  - LSD/LSD.Trait.Proxies
 
 provides:
   - LSD.Widget.Menu.Toolbar.Menu
@@ -24,11 +21,10 @@ provides:
 */
 
 LSD.Widget.Menu.Toolbar.Menu = new Class({
-  Extends: LSD.Widget.Button,
+  Extends: LSD.Widget.Menu,
   
   Implements: [
-    LSD.Trait.Menu,
-    LSD.Trait.List
+    LSD.Trait.Menu
   ],
   
   options: {
@@ -64,16 +60,11 @@ LSD.Widget.Menu.Toolbar.Menu = new Class({
     }
   },
   
-  click: function() {
-    this.select();
-    return this.parent.apply(this, arguments);
-  },
-  
   render: function() {
     this.parent.apply(this, arguments);
     if (this.attributes.label && this.attributes.label != this.label) {
       this.label = this.attributes.label;
-      this.setContent(this.label)
+      this.write(this.label)
     }
   },
   

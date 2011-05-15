@@ -11,7 +11,6 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD/LSD.Widget
-  - LSD/LSD.Trait.List
 
 provides: 
   - LSD.Widget.Table
@@ -20,10 +19,6 @@ provides:
 */
 
 LSD.Widget.Table = new Class({
-  Implements: [
-    LSD.Trait.List
-  ],
-  
   options: {
     header: null,
     footer: null,
@@ -41,7 +36,8 @@ LSD.Widget.Table = new Class({
         }
       }
     },
-    tag: 'table'
+    tag: 'table',
+    pseudos: Array.fast('list')
   },
   
   setTable: function(table) {
