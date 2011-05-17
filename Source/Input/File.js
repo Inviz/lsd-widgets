@@ -24,8 +24,7 @@ LSD.Widget.Input.File = new Class({
   options: {
     tag: 'input',
     attributes: {
-      type: 'file',
-      multiple: true
+      type: 'file'
     },
     writable: true,
     focusable: false,
@@ -40,6 +39,10 @@ LSD.Widget.Input.File = new Class({
       multiple: false
     },
     pseudos: Array.fast('uploading')
+  },
+  
+  canElementHoldValue: function() {
+    return false
   },
   
   getRawValue: function() {
