@@ -34,6 +34,7 @@ LSD.Widget.Input.Checkbox = new Class({
         }
       }
     },
+    states: Array.fast('checked'),
     writable: true
   },
   

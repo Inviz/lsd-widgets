@@ -36,6 +36,7 @@ LSD.Widget.Input.Radio = new Class({
         }
       }
     },
+    states: Array.fast('checked'),
     writable: true
   },
 
