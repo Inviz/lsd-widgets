@@ -15,12 +15,13 @@ requires:
 
 provides: 
   - LSD.Widget.Input.Submit
+  - LSD.Widget.Button.Submit
  
 ...
 */
 
-LSD.Widget.Input.Submit = new Class({
-  Extends: LSD.Widget.Button,
+LSD.Widget.Button.Submit = new Class({
+  Implements: LSD.Widget.Button,
   
   options: {
     events: {
@@ -43,3 +44,11 @@ LSD.Widget.Input.Submit = new Class({
     pseudos: Array.fast('form-associated')
   }
 });
+
+LSD.Widget.Input.Submit = new Class({
+  Implements: LSD.Widget.Button.Submit, 
+  
+  options: {
+    tag: 'input'
+  }
+})
