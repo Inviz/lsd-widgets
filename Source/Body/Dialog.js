@@ -24,6 +24,9 @@ LSD.Widget.Body.Dialog = new Class({
   Implements: [LSD.Trait.Fieldset],
   
   options: {
+    element: {
+      tag: 'section'
+    },
     classes: Array.fast('dialog'),
     pseudos: Array.fast('submittable'),
     events: {
