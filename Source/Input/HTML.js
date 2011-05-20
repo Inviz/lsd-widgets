@@ -13,13 +13,14 @@ requires:
   - LSD.Widget.Input
   - LSD/LSD.Mixin.ContentEditable
 
-provides: [LSD.Widget.Input.HTML]
+provides: 
+  - LSD.Widget.Input.HTML
  
 ...
 */
 
 
-LSD.Widget.Input.HTML = new Class({
+LSD.Widget.Input.Html = LSD.Widget.Input.HTML = new Class({
   options: {
     tag: 'htmlarea',
     writable: true,
