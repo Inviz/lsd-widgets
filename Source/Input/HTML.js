@@ -15,7 +15,8 @@ requires:
 
 provides: 
   - LSD.Widget.Input.HTML
- 
+  - LSD.Widget.Input.Html
+  
 ...
 */
 
