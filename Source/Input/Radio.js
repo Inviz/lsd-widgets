@@ -33,6 +33,11 @@ LSD.Widget.Input.Radio = new Class({
       enabled: {
         element: {
           click: 'click'
+        },
+        self: {
+          dominject: function(){
+            if(this.checked) this.getCommand();
+          }
         }
       }
     },
