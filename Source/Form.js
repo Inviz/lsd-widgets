@@ -11,8 +11,8 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD/LSD.Widget
-  - LSD/LSD.Trait.Form
-  - LSD/LSD.Trait.Fieldset
+  - LSD/LSD.Mixin.Form
+  - LSD/LSD.Mixin.Fieldset
 
 provides: 
   - LSD.Widget.Form
@@ -21,13 +21,9 @@ provides:
 */
 
 LSD.Widget.Form = new Class({
-  Implements: [
-    LSD.Trait.Fieldset,
-    LSD.Trait.Form
-  ],
-  
   options: {
     tag: 'form',
+    pseudos: Array.fast('form', 'fieldset'),
     events: {
       element: {
         submit: 'submit'
@@ -41,5 +37,9 @@ LSD.Widget.Form = new Class({
         }
       }
     }
+  },
+
+  getRequestURL: function() {
+    return this.attributes.action || location.pathname;
   }
 });

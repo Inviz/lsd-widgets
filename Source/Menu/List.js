@@ -13,8 +13,6 @@ requires:
 - LSD.Widget.Menu
 - LSD/LSD.Mixin.List
 - LSD/LSD.Mixin.Focus
-- LSD/LSD.Trait.Accessibility
-- LSD/LSD.Trait.Proxies
 
 provides:
 - LSD.Widget.Menu.List
@@ -25,28 +23,22 @@ provides:
 
 LSD.Widget.Menu.List = new Class({
   Extends: LSD.Widget.Menu,
+  
   options: {
     pseudos: Array.fast('list'),
     attributes: {
       type: 'list'
     },
-    mutations: {
-      '> button, > li, > command, > option': 'menu-list-option'
-    },
     has: {
       many: {
         items: {
-          layout: 'menu-list-item'
-        }
-      }
-    },
-    events: {
-      self: {
-        dominject: 'makeItems'
-      },
-      element: {
-        'mousedown:on(option)': function() {
-          this.listWidget.selectItem(this)
+          source: 'menu-list-option',
+          mutation: '> button, > li, > command, > option',
+          relay: {
+            mousedown: function(item) {
+              this.listWidget.selectItem(item)
+            }
+          }
         }
       }
     }

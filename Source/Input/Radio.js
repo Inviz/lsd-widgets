@@ -35,14 +35,14 @@ LSD.Widget.Input.Radio = new Class({
           click: 'click'
         },
         self: {
-          dominject: function(){
-            if(this.checked) this.getCommand();
+          setDocument: function(){
+            if (this.checked) this.getCommand();
           }
         }
       }
     },
     states: Array.fast('checked'),
-    writable: true
+    submittable: true
   },
 
   click: function(event){

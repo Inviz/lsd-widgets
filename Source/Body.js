@@ -11,10 +11,7 @@ authors: Yaroslaff Fedin
  
 requires:  
   - LSD/LSD.Widget
-  - LSD/LSD.Document
-  - LSD/LSD.Document.Resizable
-  - LSD/LSD.Document.Commands
-
+  
 provides:
   - LSD.Widget.Body
 
@@ -22,9 +19,17 @@ provides:
 */
 
 LSD.Widget.Body = new Class({
-  Extends: LSD.Document, 
-  
-  Implements: [LSD.Document.Resizable, LSD.Document.Commands],
-  
-  getSelector: false
+  options: {
+    tag: 'body',
+    events: {
+      self: {
+        nodeInserted: function(node) {
+          node.root = this;
+        },
+        nodeRemoved: function(node) {
+          if (node.root == this) delete node.root;
+        }
+      }
+    }
+  }
 });

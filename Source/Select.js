@@ -53,7 +53,7 @@ LSD.Widget.Select = new Class({
       position: 'focus',
       width: 'adapt'
     },
-    writable: true,
+    submittable: true,
     layout: Array.fast('::button'),
     has: {
       many: {

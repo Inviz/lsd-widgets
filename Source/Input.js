@@ -29,7 +29,7 @@ LSD.Widget.Input = new Class({
       type: 'text'
     },
     focusable: false,
-    writable: true,
+    submittable: true,
     events: {
       _input: {
         focus: function() {

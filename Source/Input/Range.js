@@ -39,7 +39,7 @@ LSD.Widget.Input.Range = new Class({
         }
       }
     },
-    writable: true
+    submittable: true
   },
   
   initialize: function() {

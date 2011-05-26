@@ -26,7 +26,7 @@ LSD.Widget.Input.File = new Class({
     attributes: {
       type: 'file'
     },
-    writable: true,
+    submittable: true,
     focusable: false,
     uploader: {
       instantStart: true,

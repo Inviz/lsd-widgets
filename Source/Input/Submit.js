@@ -27,7 +27,7 @@ LSD.Widget.Button.Submit = new Class({
     events: {
       _submission: {
         click: 'submit',
-        dominject: function() {
+        setDocument: function() {
           var tag = this.element.get('tag');
           if (!tag || tag == 'input' || tag == 'button') return;
           this.shim = this.allocate('submit').inject(this.element);

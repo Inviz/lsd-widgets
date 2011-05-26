@@ -35,7 +35,7 @@ LSD.Widget.Input.Checkbox = new Class({
       }
     },
     states: Array.fast('checked'),
-    writable: true
+    submittable: true
   },
   
   click: function(event){
