@@ -53,7 +53,7 @@ LSD.Widget.Label = new Class({
     if (event && event.preventDefault) event.preventDefault();
     if (!this.disabled) {
       this.focusControl();
-      if(this.control.click) this.control.click();
+      if (this.control && this.control.click) this.control.click();
       return this.parent.apply(this, arguments);
     }
   },
