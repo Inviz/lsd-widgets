@@ -58,7 +58,7 @@ LSD.Widget.Select = new Class({
     has: {
       many: {
         items: {
-          layout: 'select-option',
+          source: 'select-option',
           mutation: '> option, > li',
           relay: {
             mouseover: function() {
@@ -82,7 +82,7 @@ LSD.Widget.Select = new Class({
         },
         button: {
           selector: 'button',
-          layout: 'select-button'
+          source: 'select-button'
         }
       }
     }

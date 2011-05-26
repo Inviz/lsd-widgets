@@ -35,7 +35,7 @@ LSD.Widget.Input.Range = new Class({
       one: {
         thumb: {
           selector: 'thumb',
-          layout: 'input-range-thumb'
+          source: 'input-range-thumb'
         }
       }
     },

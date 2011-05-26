@@ -31,7 +31,7 @@ LSD.Widget.Menu.Toolbar.Menu = new Class({
     has: {
       many: {
         items: {
-          layout: 'menu-context-item'
+          source: 'menu-context-item'
         }
       }
     },
