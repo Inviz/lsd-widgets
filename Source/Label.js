@@ -28,7 +28,7 @@ LSD.Widget.Label = new Class({
             var id = this.attributes['for'];
             if (id) return {id: id, combinator: ' ', tag: '*'};
           },
-          target: 'document',
+          target: 'root',
           collection: 'labels',
           states: {
             get: {

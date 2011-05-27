@@ -42,7 +42,7 @@ LSD.Widget.Anchor = new Class({
     events: {
       self: {
         click: function(e) {
-          e.preventDefault()
+          e.preventDefault();
         }
       }
     }

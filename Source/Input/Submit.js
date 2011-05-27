@@ -26,18 +26,20 @@ LSD.Widget.Button.Submit = new Class({
   options: {
     events: {
       _submission: {
-        click: 'submit',
-        setDocument: function() {
-          var tag = this.element.get('tag');
-          if (!tag || tag == 'input' || tag == 'button') return;
-          this.shim = this.allocate('submit').inject(this.element);
-          this.element.addEvent('destroy', this.shim.destroy.bind(this.shim));
+        self: {
+          click: 'submit',
+          setDocument: function() {
+            var tag = this.element.get('tag');
+            if (!tag || tag == 'input' || tag == 'button') return;
+            this.shim = this.allocate('submit').inject(this.element);
+            this.element.addEvent('destroy', this.shim.destroy.bind(this.shim));
+          }
         }
       }
     },
     chain: {
       submission: function() {
-        var target = this.form || Slick.find(this, '! :submittable') || (this.document && this.document.submit && this.document);
+        var target = this.form || Slick.find(this, '! :submittable') || (this.root && this.root.submit && this.root);
         if (target) return {action: 'send', target: target};
       }
     },
