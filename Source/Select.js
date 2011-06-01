@@ -15,7 +15,7 @@ requires:
 - LSD/LSD.Trait.Menu
 - LSD/LSD.Mixin.List
 - LSD/LSD.Mixin.Choice
-- LSD/LSD.Mixin.Focus
+- LSD/LSD.Mixin.Focusable
 
 provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option]
  
@@ -27,7 +27,7 @@ LSD.Widget.Select = new Class({
   
   options: {
     tag: 'select',
-    pseudos: Array.fast('list', 'choice'),
+    pseudos: Array.fast('list', 'choice', 'focusable', 'form-associated'),
     events: {
       _select: {
         element: {
@@ -35,12 +35,8 @@ LSD.Widget.Select = new Class({
         },
         self: {
           set: function(item) {
-            this.setValue(item.getValue());
             this.write(item.getTitle());
             this.collapse();
-          },
-          unset: function(item) {
-            this.setValue(item.getValue(), true);
           },
           collapse: 'forgetChosenItem'
         }
@@ -53,7 +49,6 @@ LSD.Widget.Select = new Class({
       position: 'focus',
       width: 'adapt'
     },
-    submittable: true,
     layout: Array.fast('::button'),
     has: {
       many: {
@@ -69,7 +64,8 @@ LSD.Widget.Select = new Class({
               if (event) event.stop();
               this.forget();
             }
-          }
+          },
+          pseudos: Array.fast('clickable', 'command')
         }
       },
       one: {
@@ -96,8 +92,7 @@ LSD.Widget.Select.Button = new Class({
 LSD.Widget.Select.Option = new Class({
   options: {
     tag: 'option',
-    pseudos: Array.fast('item'),
-    states: Array.fast('chosen', 'selected')
+    pseudos: Array.fast('item')
   },
   
   getTitle: function() {

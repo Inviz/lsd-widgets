@@ -11,6 +11,7 @@ authors: Yaroslaff Fedin
  
 requires:  
   - LSD/LSD.Widget
+  - LSD/LSD.Mixin.Root
   
 provides:
   - LSD.Widget.Body
@@ -21,20 +22,6 @@ provides:
 LSD.Widget.Body = new Class({
   options: {
     tag: 'body',
-    root: true,
-    events: {
-      self: {
-        nodeInserted: function(node) {
-          node.root = this;
-          node.fireEvent('setRoot', this);
-        },
-        nodeRemoved: function(node) {
-          if (node.root == this) {
-            node.fireEvent('unsetRoot', this);
-            delete node.root;
-          }
-        }
-      }
-    }
+    pseudos: Array.fast('root')
   }
 });

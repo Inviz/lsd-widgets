@@ -13,8 +13,9 @@ requires:
   - LSD/LSD.Widget
   - LSD/LSD.Module.Accessories
   - LSD/LSD.Module.Layout
-  - LSD/LSD.Module.Behavior
   - LSD/LSD.Module.Expectations
+  - LSD/LSD.Mixin.Command
+  - LSD/LSD.Mixin.Target
   - LSD/LSD.Mixin.Dialog
   - LSD/LSD.Mixin.Request
 
@@ -27,9 +28,10 @@ provides:
 LSD.Widget.Anchor = new Class({
   Implements: [
     LSD.Module.Accessories,
-    LSD.Module.Behavior,
     LSD.Module.Layout,
     LSD.Module.Expectations,
+    LSD.Mixin.Command,
+    LSD.Mixin.Target,
     LSD.Mixin.Request,
     LSD.Mixin.Dialog
   ],
@@ -37,14 +39,6 @@ LSD.Widget.Anchor = new Class({
   options: {
     request: {
       type: 'form'
-    },
-    render: false,
-    events: {
-      self: {
-        click: function(e) {
-          e.preventDefault();
-        }
-      }
     }
   },
 

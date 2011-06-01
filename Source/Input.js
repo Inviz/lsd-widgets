@@ -12,7 +12,7 @@ authors: Yaroslaff Fedin
 requires:
   - LSD/LSD.Widget
   - LSD/LSD.Trait.Input
-  - LSD/LSD.Mixin.Focus
+  - LSD/LSD.Mixin.Focusable
 
 provides: 
   - LSD.Widget.Input
@@ -28,8 +28,7 @@ LSD.Widget.Input = new Class({
     attributes: {
       type: 'text'
     },
-    focusable: false,
-    submittable: true,
+    pseudos: Array.fast('form-associated'),
     events: {
       _input: {
         focus: function() {

@@ -13,6 +13,7 @@ requires:
   - LSD/LSD.Widget
   - LSD/LSD.Mixin.Form
   - LSD/LSD.Mixin.Fieldset
+  - LSD/LSD.Mixin.Command
 
 provides: 
   - LSD.Widget.Form
@@ -23,7 +24,7 @@ provides:
 LSD.Widget.Form = new Class({
   options: {
     tag: 'form',
-    pseudos: Array.fast('form', 'fieldset'),
+    pseudos: Array.fast('form', 'fieldset', 'command'),
     events: {
       element: {
         submit: 'submit'

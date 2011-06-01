@@ -14,7 +14,7 @@ requires:
 - LSD.Widget.Button
 - LSD/LSD.Widget
 - LSD/LSD.Trait.Slider
-- LSD/LSD.Mixin.Focus
+- LSD/LSD.Mixin.Focusable
 
 provides: [LSD.Widget.Input.Range]
  
@@ -39,7 +39,7 @@ LSD.Widget.Input.Range = new Class({
         }
       }
     },
-    submittable: true
+    pseudos: Array.fast('focusable', 'form-associated')
   },
   
   initialize: function() {

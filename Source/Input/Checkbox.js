@@ -10,11 +10,13 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-- LSD.Widget.Input
-- LSD/LSD.Mixin.Touchable
-- LSD/LSD.Mixin.Focus
+  - LSD.Widget.Input
+  - LSD/LSD.Mixin.Touchable
+  - LSD/LSD.Mixin.Focusable
+  - LSD/LSD.Mixin.Command
 
-provides: [LSD.Widget.Input.Checkbox]
+provides: 
+  - LSD.Widget.Input.Checkbox
  
 ...
 */
@@ -24,22 +26,6 @@ LSD.Widget.Input.Checkbox = new Class({
     shortcuts: {
       space: 'toggle'
     },
-    command: {
-      type: 'checkbox'
-    },
-    events: {
-      enabled: {
-        element: {
-          click: 'click'
-        }
-      }
-    },
-    states: Array.fast('checked'),
-    submittable: true
-  },
-  
-  click: function(event){
-    if (event && event.preventDefault) event.preventDefault();
-    if (!this.disabled) return this.parent.apply(this, arguments);
+    pseudos: Array.fast('clickable', 'focusable', 'checkbox', 'form-associated')
   }
 });

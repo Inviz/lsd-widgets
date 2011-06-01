@@ -11,7 +11,7 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD/LSD.Widget
-  - LSD/LSD.Mixin.Focus
+  - LSD/LSD.Mixin.Focusable
   - LSD/LSD.Mixin.List
   
 

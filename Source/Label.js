@@ -38,24 +38,14 @@ LSD.Widget.Label = new Class({
         }
       }
     },
-    pseudos: Array.fast('form-associated'),
-    states: Array.fast('invalid'),
-    events: {
-      enabled: {
-        element: {
-          'click': 'click'
-        }
-      }
-    }
+    pseudos: Array.fast('form-associated', 'clickable'),
+    states: Array.fast('invalid')
   },
   
   click: function(event){
-    if (event && event.preventDefault) event.preventDefault();
-    if (!this.disabled) {
-      this.focusControl();
-      if (this.control && this.control.click) this.control.click();
-      return this.parent.apply(this, arguments);
-    }
+    this.focusControl();
+    if (this.control && this.control.click) this.control.click();
+    return this.parent.apply(this, arguments);
   },
   
   focusControl: function(event) {

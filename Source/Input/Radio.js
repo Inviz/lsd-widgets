@@ -13,7 +13,7 @@ requires:
 - LSD.Widget.Input
 - LSD/LSD.Widget
 - LSD/LSD.Mixin.Touchable
-- LSD/LSD.Mixin.Focus
+- LSD/LSD.Mixin.Focusable
 
 provides: [LSD.Widget.Input.Radio]
  
@@ -23,30 +23,9 @@ provides: [LSD.Widget.Input.Radio]
 LSD.Widget.Input.Radio = new Class({
   options: {
     tag: 'input',
+    pseudos: Array.fast('focusable', 'clickable', 'radio', 'form-associated'),
     shortcuts: {
       space: 'click'
-    },
-    command: {
-      type: 'radio'
-    },
-    events: {
-      enabled: {
-        element: {
-          click: 'click'
-        },
-        self: {
-          setDocument: function(){
-            if (this.checked) this.getCommand();
-          }
-        }
-      }
-    },
-    states: Array.fast('checked'),
-    submittable: true
-  },
-
-  click: function(event){
-    if (event && event.preventDefault) event.preventDefault();
-    if (!this.checked && !this.disabled) return this.parent.apply(this, arguments);
+    }
   }
 });

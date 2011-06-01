@@ -24,7 +24,7 @@ provides:
 LSD.Widget.Input.Html = LSD.Widget.Input.HTML = new Class({
   options: {
     tag: 'htmlarea',
-    submittable: true,
+    pseudos: Array.fast('focusable', 'form-associated'),
     attributes: {
       contenteditable: 'editor'
     },

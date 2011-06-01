@@ -26,8 +26,6 @@ LSD.Widget.Input.File = new Class({
     attributes: {
       type: 'file'
     },
-    submittable: true,
-    focusable: false,
     uploader: {
       instantStart: true,
       path: '/flashes/Swiff.Uploader.swf',
@@ -38,7 +36,7 @@ LSD.Widget.Input.File = new Class({
       method: 'post',
       multiple: false
     },
-    pseudos: Array.fast('uploading')
+    pseudos: Array.fast('uploading', 'focusable', 'form-associated')
   },
   
   canElementHoldValue: function() {

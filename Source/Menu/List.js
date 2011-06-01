@@ -12,7 +12,7 @@ authors: Yaroslaff Fedin
 requires:
 - LSD.Widget.Menu
 - LSD/LSD.Mixin.List
-- LSD/LSD.Mixin.Focus
+- LSD/LSD.Mixin.Focusable
 
 provides:
 - LSD.Widget.Menu.List
