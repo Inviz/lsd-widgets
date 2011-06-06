@@ -32,15 +32,8 @@ LSD.Widget.Anchor = new Class({
     LSD.Module.Expectations,
     LSD.Mixin.Command,
     LSD.Mixin.Target,
-    LSD.Mixin.Request,
-    LSD.Mixin.Dialog
+    LSD.Mixin.Request
   ],
-  
-  options: {
-    request: {
-      type: 'form'
-    }
-  },
 
   initialize: LSD.Module.Options.initialize
 

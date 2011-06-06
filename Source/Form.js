@@ -11,7 +11,7 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD/LSD.Widget
-  - LSD/LSD.Mixin.Form
+  - LSD/LSD.Mixin.Submittable
   - LSD/LSD.Mixin.Fieldset
   - LSD/LSD.Mixin.Command
 
@@ -24,11 +24,8 @@ provides:
 LSD.Widget.Form = new Class({
   options: {
     tag: 'form',
-    pseudos: Array.fast('form', 'fieldset', 'command'),
+    pseudos: Array.fast('form', 'fieldset', 'command', 'submittable'),
     events: {
-      element: {
-        submit: 'submit'
-      },
       self: {
         build: function() {
           // novalidate html attribute disables internal form validation 

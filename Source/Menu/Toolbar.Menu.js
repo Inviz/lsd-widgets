@@ -11,7 +11,6 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD.Widget.Menu.Toolbar
-  - LSD/LSD.Trait.Menu
 
 provides:
   - LSD.Widget.Menu.Toolbar.Menu
@@ -23,33 +22,20 @@ provides:
 LSD.Widget.Menu.Toolbar.Menu = new Class({
   Extends: LSD.Widget.Menu,
   
-  Implements: [
-    LSD.Trait.Menu
-  ],
-  
   options: {
     has: {
       many: {
         items: {
           source: 'menu-context-item'
         }
+      },
+      one: {
+        menu: {
+          type: 'menu'
+        }
       }
     },
     events: {
-      element: {
-        //mousedown: 'retain'
-      },
-      _items: {
-        element: {
-          'mousemove:on(command)': function() {
-            if (!this.chosen) this.listWidget.selectItem(this)
-          },
-          'click:on(command)': function() {
-            if (!this.selected) this.listWidget.selectItem(this)
-            this.listWidget.collapse();
-          }
-        }
-      },
       self: {
         click: 'expand',
         expand: 'unselectItem'

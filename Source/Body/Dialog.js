@@ -26,23 +26,20 @@ LSD.Widget.Body.Dialog = new Class({
       tag: 'section'
     },
     classes: Array.fast('dialog'),
-    pseudos: Array.fast('form', 'fieldset'),
+    pseudos: Array.fast('fieldset', 'submittable', 'command'),
+    
+    clone: true,
+    interpolate: function(string) {
+      this.options.interpolate = LSD.Interpolation.from(this.attributes, this, this.dataset)
+    },
     events: {
       _dialog: {
         element: {
           'click:relay(.cancel)': 'cancel'
         },
         self: {
-          submit: function() {
-            this.hide();
-            var caller = this.getCaller();
-            if (caller && caller.callChain) caller.callChain(this.getData());
-          },
-          cancel: function() {
-            this.hide();
-            var caller = this.getCaller();
-            if (caller && caller.clearChain) caller.clearChain(this.getData());
-          }
+          submit: 'hide',
+          cancel: 'hide'
         }
       }
     },
@@ -50,22 +47,10 @@ LSD.Widget.Body.Dialog = new Class({
       one: {
         form: {
           selector: 'form',
-          chain: {
-            submission: function() {
-              return {action: 'send', target: this.root}
-            }
-          }
+          as: 'invoker'
         }
       }
     }
-  },
-
-  getCaller: function() {
-    return this.options.caller && this.options.caller.call(this);
-  },
-  
-  getDataWidget: function() {
-    return this.form || this;
   },
   
   hidden: true

@@ -12,7 +12,6 @@ authors: Yaroslaff Fedin
 requires:
 - LSD/LSD.Widget
 - LSD.Widget.Button
-- LSD/LSD.Trait.Menu
 - LSD/LSD.Mixin.List
 - LSD/LSD.Mixin.Choice
 - LSD/LSD.Mixin.Focusable
@@ -23,31 +22,16 @@ provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option
 */
 
 LSD.Widget.Select = new Class({
-  Extends: LSD.Trait.Menu,
-  
   options: {
     tag: 'select',
     pseudos: Array.fast('list', 'choice', 'focusable', 'form-associated'),
     events: {
-      _select: {
-        element: {
-          click: 'expand'
-        },
-        self: {
-          set: function(item) {
-            this.write(item.getTitle());
-            this.collapse();
-          },
-          collapse: 'forgetChosenItem'
+      self: {
+        set: function(item) {
+          this.write(item.getTitle());
+          this.collapse();
         }
       }
-    },
-    shortcuts: {
-      'ok': 'selectChosenItem'
-    },
-    menu: {
-      position: 'focus',
-      width: 'adapt'
     },
     layout: Array.fast('::button'),
     has: {
@@ -55,17 +39,10 @@ LSD.Widget.Select = new Class({
         items: {
           source: 'select-option',
           mutation: '> option, > li',
-          relay: {
-            mouseover: function() {
-              if (!this.chosen) this.listWidget.chooseItem(this)
-            },
-            click: function(event) {
-              if (!this.select()) this.listWidget.collapse();
-              if (event) event.stop();
-              this.forget();
-            }
+          states: {
+            hover: 'chosen'
           },
-          pseudos: Array.fast('clickable', 'command')
+          pseudos: Array.fast('clickable', 'hoverable', 'command')
         }
       },
       one: {
@@ -85,9 +62,7 @@ LSD.Widget.Select = new Class({
   }
 });
 
-LSD.Widget.Select.Button = new Class({
-  Extends: LSD.Widget.Button
-});
+LSD.Widget.Select.Button = LSD.Widget.Button;
 
 LSD.Widget.Select.Option = new Class({
   options: {
