@@ -24,11 +24,14 @@ LSD.Widget.Label = new Class({
     has: {
       one: {
         control: {
+          selector: ':form-associated',
           expectation: function() {
             var id = this.attributes['for'];
             if (id) return {id: id, combinator: ' ', tag: '*'};
           },
-          target: 'root',
+          target: function() {
+            return this.attributes['for'] ? 'root' : null;
+          },
           collection: 'labels',
           states: {
             get: {
@@ -38,20 +41,20 @@ LSD.Widget.Label = new Class({
         }
       }
     },
-    pseudos: Array.fast('form-associated', 'clickable'),
-    states: Array.fast('invalid')
-  },
-  
-  click: function(event){
-    this.focusControl();
-    if (this.control && this.control.click) this.control.click();
-    return this.parent.apply(this, arguments);
-  },
-  
-  focusControl: function(event) {
-    if (this.control && this.control.focus) {
-      this.control.focus();
-      if (event) event.preventDefault();
+    pseudos: Array.fast('form-associated', 'clickable', 'command'),
+    states: Array.fast('invalid'),
+    chain: {
+      focusControl: function() {
+        if (this.control) return {
+          target: this.control,
+          action: 'focus'
+        };
+      }
+    },
+    events: {
+      self: {
+        click: 'focusControl'
+      }
     }
   }
 });
