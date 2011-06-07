@@ -28,12 +28,7 @@ LSD.Widget.Input.Html = LSD.Widget.Input.HTML = new Class({
     attributes: {
       contenteditable: 'editor'
     },
-    states: {
-      editing: {
-        enabler: 'edit',
-        disable: 'finish'
-      }
-    },
+    states: Array.fast('editing'),
     events: {
       element: {
         click: 'edit'
