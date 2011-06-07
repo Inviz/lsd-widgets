@@ -20,10 +20,7 @@ provides: [LSD.Widget.Input.Date]
 LSD.Widget.Input.Date = new Class({
   Extends: LSD.Widget.Input,
   
-  Implements: [
-    LSD.Trait.Date,
-    LSD.Mixin.Dialog
-  ],
+  Implements: LSD.Trait.Date,
   
   options: {
     attributes: {

@@ -16,7 +16,6 @@ requires:
   - LSD/LSD.Module.Expectations
   - LSD/LSD.Mixin.Command
   - LSD/LSD.Mixin.Target
-  - LSD/LSD.Mixin.Dialog
   - LSD/LSD.Mixin.Request
 
 provides: 
