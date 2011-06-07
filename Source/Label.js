@@ -24,13 +24,8 @@ LSD.Widget.Label = new Class({
     has: {
       one: {
         control: {
-          selector: ':form-associated',
           expectation: function() {
-            var id = this.attributes['for'];
-            if (id) return {id: id, combinator: ' ', tag: '*'};
-          },
-          target: function() {
-            return this.attributes['for'] ? 'root' : null;
+            return {combinator: ' ', tag: '*', pseudos: [{key: 'form-associated'}]}
           },
           collection: 'labels',
           states: {
@@ -39,6 +34,17 @@ LSD.Widget.Label = new Class({
             }
           }
         }
+      }
+    },
+    expects: {
+      '[for]': function(widget, state) {
+        widget[state ? 'addRelation' : 'removeRelation']('control', {
+          expectation: function() {
+            var id = this.attributes['for'];
+            if (id) return {id: id, combinator: ' ', tag: '*'};
+          },
+          target: 'root'
+        });
       }
     },
     pseudos: Array.fast('form-associated', 'clickable', 'command'),
