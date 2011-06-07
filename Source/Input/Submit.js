@@ -38,7 +38,7 @@ LSD.Widget.Button.Submit = new Class({
     },
     chain: {
       submission: function() {
-        var target = this.form || Slick.find(this, '! :form');
+        var target = this.form || Slick.find(this, '! :submittable');
         if (target) return {action: 'submit', target: target};
       }
     },
