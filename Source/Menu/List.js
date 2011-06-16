@@ -36,7 +36,7 @@ LSD.Widget.Menu.List = new Class({
           mutation: '> button, > li, > command, > option',
           relay: {
             mousedown: function(item) {
-              this.listWidget.selectItem(item)
+              this.list.selectItem(item)
             }
           }
         }
