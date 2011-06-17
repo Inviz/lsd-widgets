@@ -36,7 +36,25 @@ LSD.Widget.Input.File = new Class({
       method: 'post',
       multiple: false
     },
-    pseudos: Array.fast('uploading', 'focusable', 'form-associated')
+    pseudos: Array.fast('uploader', 'focusable', 'form-associated'),
+    layout: Array.fast('::list'),
+    proxies: {
+      files: {
+        condition: function(widget) {
+          return (widget.tagName == 'file');
+        },
+        container: function() {
+          return this.list;
+        }
+      }
+    },
+    has: {
+      one: {
+        list: {
+          selector: 'filelist'
+        }
+      }
+    }
   },
   
   canElementHoldValue: function() {

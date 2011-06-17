@@ -6,7 +6,6 @@ copyright: Yaroslaff Fedin
 authors: Yaroslaff Fedin
 sources:
   - Source/Body.js
-  - Source/Anchor.js
   - Source/Body/Page.js
   - Source/Body/Dialog.js
   - Source/Label.js
@@ -30,4 +29,4 @@ sources:
   - Source/Scrollbar.js
   - Source/Select.js
   - Source/Textarea.js
-  
+  - Source/Progress.js
