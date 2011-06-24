@@ -10,7 +10,7 @@ license: Public domain (http://unlicense.org).
 authors: Yaroslaff Fedin
  
 requires:
-  - LSD.Widget
+  - LSD/LSD.Widget
 
 provides:   
   - LSD.Widget.Progress

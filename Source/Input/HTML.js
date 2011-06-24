@@ -24,34 +24,31 @@ provides:
 LSD.Widget.Input.Html = LSD.Widget.Input.HTML = new Class({
   options: {
     tag: 'input',
-    pseudos: Array.fast('focusable', 'form-associated'),
+    pseudos: Array.fast('form-associated'),
     attributes: {
-      contenteditable: 'editor'
+      contenteditable: 'editor',
+      tabindex: 0
     },
     states: Array.fast('editing'),
     events: {
-      element: {
-        click: 'edit'
-      },
       self: {
-        focus: 'edit'
+        focus: 'edit',
+        edit: function() {
+          this.openEditor();
+        },
+        finish: 'closeEditor'
       }
     }
   },
   
-  edit: function() {
-    this.useEditor(function(editor) {
-      console.log('editor ready', editor)
-    })
-  },
-  
-  finish: function() {
-    
-  },
-  
   getValue: function() {
-    if (this.editor) this.editor.updateElement();
-    return this.element.get('value')
+    if (this.editing && this.editor) return this.editor.getData();
+    return this.element.get('html');
+  },
+  
+  writeValue: function(value) {
+    if (this.editing && this.editor) return this.editor.setData(value);
+    return this.element.set('html', value);
   }
   
 })
