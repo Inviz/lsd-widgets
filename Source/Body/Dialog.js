@@ -38,7 +38,9 @@ LSD.Widget.Body.Dialog = new Class({
           'click:relay(.cancel)': 'cancel'
         },
         self: {
-          submit: 'hide',
+          submit: function() {
+            this.hide();
+          },
           cancel: 'hide'
         }
       }

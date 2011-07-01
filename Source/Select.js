@@ -24,7 +24,7 @@ provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option
 LSD.Widget.Select = new Class({
   options: {
     tag: 'select',
-    pseudos: Array.fast('list', 'choice', 'focusable', 'form-associated'),
+    pseudos: Array.fast('list', 'choice', 'focusable', 'value', 'form-associated'),
     events: {
       self: {
         set: function(item) {

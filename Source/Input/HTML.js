@@ -24,7 +24,7 @@ provides:
 LSD.Widget.Input.Html = LSD.Widget.Input.HTML = new Class({
   options: {
     tag: 'input',
-    pseudos: Array.fast('form-associated'),
+    pseudos: Array.fast('form-associated', 'value'),
     attributes: {
       contenteditable: 'editor',
       tabindex: 0

@@ -27,16 +27,11 @@ LSD.Widget.Input.File = new Class({
       type: 'file'
     },
     uploader: {
-      instantStart: true,
       path: '/flashes/Swiff.Uploader.swf',
       url: '/blobs.json',
-      timeLimit: 36000,
-      queued: false,
-      fieldName: 'blob',
-      method: 'post',
-      multiple: false
+      fieldName: 'blob'
     },
-    pseudos: Array.fast('uploader', 'focusable', 'form-associated'),
+    pseudos: Array.fast('uploader', 'focusable', 'form-associated', 'value'),
     layout: Array.fast('::list'),
     proxies: {
       files: {
@@ -51,6 +46,7 @@ LSD.Widget.Input.File = new Class({
     has: {
       one: {
         list: {
+          source: 'filelist',
           selector: 'filelist'
         }
       }

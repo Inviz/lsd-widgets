@@ -47,13 +47,13 @@ LSD.Widget.Label = new Class({
         });
       }
     },
-    pseudos: Array.fast('form-associated', 'clickable', 'command'),
+    pseudos: Array.fast('form-associated', 'clickable', 'command', 'value'),
     states: Array.fast('invalid'),
     chain: {
       focusControl: function() {
         if (this.control) return {
           target: this.control,
-          action: 'focus'
+          action: this.control.pseudos.clickable ? 'submit' : 'focus'
         };
       }
     },

@@ -39,7 +39,7 @@ LSD.Widget.Input.Range = new Class({
         }
       }
     },
-    pseudos: Array.fast('focusable', 'form-associated')
+    pseudos: Array.fast('focusable', 'value', 'form-associated')
   },
   
   initialize: function() {

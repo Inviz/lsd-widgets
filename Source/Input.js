@@ -28,7 +28,7 @@ LSD.Widget.Input = new Class({
     attributes: {
       type: 'text'
     },
-    pseudos: Array.fast('form-associated'),
+    pseudos: Array.fast('form-associated', 'value'),
     events: {
       _input: {
         focus: function() {

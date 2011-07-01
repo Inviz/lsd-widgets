@@ -23,7 +23,7 @@ provides: [LSD.Widget.Input.Radio]
 LSD.Widget.Input.Radio = new Class({
   options: {
     tag: 'input',
-    pseudos: Array.fast('focusable', 'clickable', 'radio', 'form-associated'),
+    pseudos: Array.fast('focusable', 'clickable', 'radio', 'form-associated', 'value'),
     shortcuts: {
       space: 'click'
     }
