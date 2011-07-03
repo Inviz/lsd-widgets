@@ -25,7 +25,7 @@ LSD.Widget.Menu = new Class({
   options: {
     tag: 'menu',
     inline: null,
-    pseudps: Array.fast('list')
+    pseudos: Array.fast('list')
   }
 });
 
