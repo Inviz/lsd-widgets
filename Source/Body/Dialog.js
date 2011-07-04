@@ -27,7 +27,6 @@ LSD.Widget.Body.Dialog = new Class({
     },
     classes: Array.fast('dialog'),
     pseudos: Array.fast('fieldset', 'submittable', 'command'),
-    
     clone: true,
     interpolate: function(string) {
       this.options.interpolate = LSD.Interpolation.from(this.attributes, this, this.dataset)
@@ -42,6 +41,13 @@ LSD.Widget.Body.Dialog = new Class({
             this.hide();
           },
           cancel: 'hide'
+        },
+        setRole: function() {
+          var kind = this.attributes.kind;
+          if (!kind) return;
+          var element = Slick.find(document.body, 'dialog#' + kind);
+          console.log('set role', this.source, kind, [element, this.element]);
+          if (element) return {element: element};
         }
       }
     },
