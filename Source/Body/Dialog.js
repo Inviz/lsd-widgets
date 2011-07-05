@@ -11,6 +11,10 @@ authors: Yaroslaff Fedin
  
 requires:
   - LSD.Widget.Body.Page
+  - LSD/LSD.Mixin.Fieldset
+  - LSD/LSD.Mixin.Submittable
+  - LSD/LSD.Mixin.Command
+  - LSD/LSD.Mixin.Invokable
 
 provides:
   - LSD.Widget.Body.Dialog
@@ -26,7 +30,7 @@ LSD.Widget.Body.Dialog = new Class({
       tag: 'section'
     },
     classes: Array.fast('dialog'),
-    pseudos: Array.fast('fieldset', 'submittable', 'command'),
+    pseudos: Array.fast('fieldset', 'submittable', 'invokable', 'command'),
     clone: true,
     interpolate: function(string) {
       this.options.interpolate = LSD.Interpolation.from(this.attributes, this, this.dataset)
@@ -46,8 +50,7 @@ LSD.Widget.Body.Dialog = new Class({
           var kind = this.attributes.kind;
           if (!kind) return;
           var element = Slick.find(document.body, 'dialog#' + kind);
-          console.log('set role', this.source, kind, [element, this.element]);
-          if (element) return {element: element};
+          if (element) return {origin: element};
         }
       }
     },
