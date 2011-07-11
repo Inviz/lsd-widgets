@@ -11,6 +11,7 @@ authors: Yaroslaff Fedin
  
 requires:
 - LSD/LSD.Widget
+- LSD.Widget.Menu
 - LSD.Widget.Button
 - LSD/LSD.Mixin.List
 - LSD/LSD.Mixin.Choice
