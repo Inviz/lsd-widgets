@@ -25,7 +25,7 @@ LSD.Widget.Menu.List = new Class({
   Extends: LSD.Widget.Menu,
   
   options: {
-    pseudos: Array.fast('list', 'value'),
+    pseudos: Array.object('list', 'value'),
     attributes: {
       type: 'list'
     },
@@ -34,7 +34,7 @@ LSD.Widget.Menu.List = new Class({
         items: {
           source: 'menu-list-option',
           mutation: '> button, > li, > command, > option',
-          pseudos: Array.fast('clickable')
+          pseudos: Array.object('clickable')
         }
       }
     }
@@ -44,6 +44,6 @@ LSD.Widget.Menu.List = new Class({
 LSD.Widget.Menu.List.Option = new Class({
   options: {
     tag: 'option',
-    pseudos: Array.fast('item')
+    pseudos: Array.object('item')
   }
 });

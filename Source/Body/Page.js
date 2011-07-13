@@ -25,7 +25,7 @@ LSD.Widget.Body.Page = new Class({
     element: {
       tag: 'section'
     },
-    classes: Array.fast('page'),
+    classes: Array.object('page'),
     nodeType: 1,
     events: {
       _page: {

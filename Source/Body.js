@@ -22,6 +22,6 @@ provides:
 LSD.Widget.Body = new Class({
   options: {
     tag: 'body',
-    pseudos: Array.fast('root')
+    pseudos: Array.object('root')
   }
 });

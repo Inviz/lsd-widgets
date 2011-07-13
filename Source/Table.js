@@ -37,7 +37,7 @@ LSD.Widget.Table = new Class({
       }
     },
     tag: 'table',
-    pseudos: Array.fast('list')
+    pseudos: Array.object('list')
   },
   
   setTable: function(table) {

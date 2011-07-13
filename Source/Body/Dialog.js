@@ -29,11 +29,11 @@ LSD.Widget.Body.Dialog = new Class({
     element: {
       tag: 'section'
     },
-    classes: Array.fast('dialog'),
-    pseudos: Array.fast('fieldset', 'submittable', 'invokable', 'command'),
+    classes: Array.object('dialog'),
+    pseudos: Array.object('fieldset', 'submittable', 'invokable', 'command'),
     clone: true,
     interpolate: function(string) {
-      this.options.interpolate = LSD.Interpolation.from(this.attributes, this, this.dataset)
+      
     },
     events: {
       _dialog: {
@@ -58,7 +58,8 @@ LSD.Widget.Body.Dialog = new Class({
       one: {
         form: {
           selector: 'form',
-          as: 'invoker'
+          as: 'invoker',
+          pseudos: Array.object('invokable')
         }
       }
     }

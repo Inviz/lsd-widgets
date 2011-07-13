@@ -24,7 +24,7 @@ provides:
 LSD.Widget.Form = new Class({
   options: {
     tag: 'form',
-    pseudos: Array.fast('form', 'fieldset', 'command', 'submittable'),
+    pseudos: Array.object('form', 'fieldset', 'command', 'submittable'),
     events: {
       self: {
         build: function() {

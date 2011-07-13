@@ -24,7 +24,7 @@ LSD.Widget.Button = new Class({
   options: {
     tag: 'button',
     inline: true,
-    pseudos: Array.fast('touchable', 'clickable', 'command')
+    pseudos: Array.object('touchable', 'clickable', 'command')
   },
   
   write: function(content) {

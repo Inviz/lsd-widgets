@@ -24,8 +24,15 @@ LSD.Widget.Input.Date = new Class({
     attributes: {
       type: 'date'
     },
-    dialogs: {
-      
+    layout: {
+      '::dialog(input-date)': {
+        'if &:expanded': {
+          '::decrementor': 'Previous month',
+          '::incrementor': 'Next month',
+          '::table': true,
+          '::closer': 'Close dialog'
+        }
+      }
     }
   },
   

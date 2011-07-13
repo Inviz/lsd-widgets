@@ -28,7 +28,7 @@ LSD.Widget.Input = new Class({
     attributes: {
       type: 'text'
     },
-    pseudos: Array.fast('form-associated', 'value'),
+    pseudos: Array.object('form-associated', 'value'),
     events: {
       _input: {
         focus: function() {
@@ -39,7 +39,7 @@ LSD.Widget.Input = new Class({
         }
       }
     },
-    states: Array.fast('focused')
+    states: Array.object('focused')
   },
   
   retain: function() {

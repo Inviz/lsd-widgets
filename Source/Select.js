@@ -25,7 +25,7 @@ provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option
 LSD.Widget.Select = new Class({
   options: {
     tag: 'select',
-    pseudos: Array.fast('list', 'choice', 'focusable', 'value', 'form-associated'),
+    pseudos: Array.object('list', 'choice', 'focusable', 'value', 'form-associated'),
     events: {
       self: {
         set: function(item) {
@@ -34,7 +34,7 @@ LSD.Widget.Select = new Class({
         }
       }
     },
-    layout: Array.fast('::button'),
+    layout: Array.object('::button'),
     has: {
       many: {
         items: {
@@ -43,7 +43,7 @@ LSD.Widget.Select = new Class({
           states: {
             hover: 'chosen'
           },
-          pseudos: Array.fast('clickable', 'hoverable', 'command')
+          pseudos: Array.object('clickable', 'hoverable', 'command')
         }
       },
       one: {
@@ -68,7 +68,7 @@ LSD.Widget.Select.Button = LSD.Widget.Button;
 LSD.Widget.Select.Option = new Class({
   options: {
     tag: 'option',
-    pseudos: Array.fast('item')
+    pseudos: Array.object('item')
   },
   
   getTitle: function() {

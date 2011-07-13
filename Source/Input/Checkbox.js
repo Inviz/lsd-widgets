@@ -26,6 +26,6 @@ LSD.Widget.Input.Checkbox = new Class({
     shortcuts: {
       space: 'toggle'
     },
-    pseudos: Array.fast('clickable', 'focusable', 'checkbox', 'value', 'form-associated')
+    pseudos: Array.object('clickable', 'focusable', 'checkbox', 'value', 'form-associated')
   }
 });

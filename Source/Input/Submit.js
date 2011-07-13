@@ -42,7 +42,7 @@ LSD.Widget.Button.Submit = new Class({
         if (target) return {action: 'submit', target: target};
       }
     },
-    pseudos: Array.fast('form-associated', 'value', 'command')
+    pseudos: Array.object('form-associated', 'value', 'command')
   }
 });
 

@@ -31,8 +31,8 @@ LSD.Widget.Input.File = new Class({
       url: '/blobs.json',
       fieldName: 'blob'
     },
-    pseudos: Array.fast('uploader', 'focusable', 'form-associated', 'value'),
-    layout: Array.fast('::list'),
+    pseudos: Array.object('uploader', 'focusable', 'form-associated', 'value'),
+    layout: Array.object('::list'),
     proxies: {
       files: {
         condition: function(widget) {

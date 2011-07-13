@@ -30,7 +30,7 @@ LSD.Widget.Input.Range = new Class({
       next: 'increment',
       previous: 'decrement'
     },
-    layout: Array.fast('::thumb'),
+    layout: Array.object('::thumb'),
     has: {
       one: {
         thumb: {
@@ -39,7 +39,7 @@ LSD.Widget.Input.Range = new Class({
         }
       }
     },
-    pseudos: Array.fast('focusable', 'value', 'form-associated')
+    pseudos: Array.object('focusable', 'value', 'form-associated')
   },
   
   initialize: function() {

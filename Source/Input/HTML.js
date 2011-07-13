@@ -24,12 +24,12 @@ provides:
 LSD.Widget.Input.Html = LSD.Widget.Input.HTML = new Class({
   options: {
     tag: 'input',
-    pseudos: Array.fast('form-associated', 'value'),
+    pseudos: Array.object('form-associated', 'value'),
     attributes: {
       contenteditable: 'editor',
       tabindex: 0
     },
-    states: Array.fast('editing'),
+    states: Array.object('editing'),
     events: {
       self: {
         focus: 'edit',

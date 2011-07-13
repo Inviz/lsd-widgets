@@ -22,7 +22,7 @@ LSD.Widget.Progress = new Class({
   options: {
     tag: 'progress',
     inline: null,
-    pseudos: Array.fast('value'),
+    pseudos: Array.object('value'),
     events: {
       _initial: {
         self: {
