@@ -11,10 +11,11 @@ authors: Yaroslaff Fedin
  
 requires:
 - LSD/LSD.Widget
-- LSD.Widget.Menu
 - LSD.Widget.Button
+- LSD.Widget.Menu.Context
 - LSD/LSD.Mixin.List
 - LSD/LSD.Mixin.Choice
+- LSD/LSD.Mixin.Touchable
 - LSD/LSD.Mixin.Focusable
 
 provides: [LSD.Widget.Select, LSD.Widget.Select.Button, LSD.Widget.Select.Option]
@@ -50,7 +51,7 @@ LSD.Widget.Select = new Class({
         menu: {
           proxy: function(widget) {
             if (!widget.pseudos.item) return;
-            if (!this.getSelectedItem() || widget.pseudos.selected) this.selectItem(widget)
+            // if (!this.selectedItems[0] || widget.pseudos.selected) widget.select()
             return true;
           }
         },
