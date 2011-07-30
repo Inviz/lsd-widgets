@@ -51,7 +51,12 @@ LSD.Widget.Table = new Class({
   setData: function(data) {
     if (!this.body) this.body = new Element('tbody').inject(this.element);
     else this.body.empty()
-    for (var i = 0, row; row = data[i++];) this.body.appendChild(this.setRow(row));
+    this.rows = [];
+    for (var i = 0, row; row = data[i++];) {
+      row = this.setRow(row)
+      this.rows.push(row);
+      this.body.appendChild(row);
+    }
   },
   
   setRow: function(values) {

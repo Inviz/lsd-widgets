@@ -42,21 +42,12 @@ LSD.Widget.Input = new Class({
     states: Array.object('focused')
   },
   
-  retain: function() {
-    this.focus(false);
-    return false;
-  },
-  
   applyValue: function(item) {
     this.input.set('value', item);
   },
 
   getRawValue: function() {
     return ('value' in this.attributes) && this.element.get('value');
-  },
-
-  focus: function() {
-    this.element.focus();
   }
 
 });

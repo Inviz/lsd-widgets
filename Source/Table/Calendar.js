@@ -25,6 +25,7 @@ LSD.Widget.Table.Calendar = new Class({
     date: null,
     format: {
       caption: "%B %Y"
+      
     },
     classes: ['calendar'],
     events: {
@@ -45,7 +46,7 @@ LSD.Widget.Table.Calendar = new Class({
   },
   
   setRow: function(days) {
-    var row = this.parent.apply(this, arguments);
+    var row = LSD.Widget.Table.prototype.setRow.apply(this, arguments);
     var number = days[0]
     if ((number <= this.day) && (number + 7 > this.day)) {
       row.className = 'selected';
@@ -58,13 +59,9 @@ LSD.Widget.Table.Calendar = new Class({
   },
   
   selectDate: function(e) {
-    var cell = e.target;
-    this.day = this.getDayFromCell(cell);
-    this.setCell(this.selected);
-    this.setDate(this.current.clone().set('date', this.day));
-    this.fireEvent('set', this.date);
-    this.selected = cell;
-    this.setCell(this.selected);
+    var date = this.date ? this.date.clone() : new Date;
+    var day = this.getDayFromCell(e.target);
+    this.setDate(date.set('date', day));
   },
   
   touchDate: function(e) {
@@ -82,8 +79,17 @@ LSD.Widget.Table.Calendar = new Class({
     return parseInt(cell.innerHTML);
   },
   
+  getCellByDay: function(day) {
+    var index = day + this.firstDay.get('day') - 1;
+    var row = this.rows[Math.floor(index / 7)];
+    var weekday = index % 7;
+    for (var i = 0, j = 0, node, nodes = row.childNodes; node = nodes[i++];)
+      if (LSD.toLowerCase(node.tagName) == 'td')
+        if (j++ == weekday) return node;
+  },
+  
   setCell: function(number) {
-    var cell = this.parent.apply(this, arguments);
+    var cell = LSD.Widget.Table.prototype.setCell.apply(this, arguments);
     if (cell == number) number = this.getDayFromCell(cell);
     if (number == ' ') {
       cell.className = 'empty';
@@ -98,12 +104,35 @@ LSD.Widget.Table.Calendar = new Class({
     return cell;
   },
   
+  setDay: function(date) {
+    var day = date.getDate();
+    this.firstDay = date.clone().set('date', 1);
+    var monthSet = !this.month || this.firstDay.compare(this.month);
+    console.log(123123123, !this.month || this.firstDay.compare(this.month))
+    if (monthSet) this.setMonth(this.firstDay);
+    if (monthSet || day != this.day) {
+      this.day = day;
+      var cell = this.getCellByDay(this.day);
+      if (this.selected) this.setCell(this.selected);
+      console.log(this.selected, cell)
+      this.selected = cell;
+      this.setCell(this.selected);
+      this.fireEvent('setDay', [day, cell]);
+    }
+  },
+  
   setDate: function(date) {
-    this.date = date = (date ? date.clone() : new Date);
-    var beginning = date.clone().set('date', 1);
-    if (this.currrent && !beginning.compare(this.currrent)) return; false;
-    this.current = beginning;
-    this.day = this.date.getDate();
+    if (!date) date = new Date;
+    console.log(!this.date || this.date.compare(date), [date, this.date])
+    if (this.date && !this.date.compare(date)) return false;
+    this.date = date;
+    this.fireEvent('set', date);
+    this.setDay(date);
+  },
+  
+  setMonth: function(date) {
+    delete this.selected;
+    this.month = date;
     var table = {
       caption: date.format(this.options.format.caption),
       data: [[]],
@@ -111,7 +140,7 @@ LSD.Widget.Table.Calendar = new Class({
     };
     var data = table.data;
     if (this.options.footer !== false) table.footer = table.header;
-    var day = beginning.get('day');
+    var day = date.get('day');
     var last = date.getLastDayOfMonth();
     for (var i = 0; i < day; i++) data[0].push(' ');
     for (var i = 1; i <= last; i++) {

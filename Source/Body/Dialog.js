@@ -30,11 +30,8 @@ LSD.Widget.Body.Dialog = new Class({
       tag: 'section'
     },
     classes: Array.object('dialog'),
-    pseudos: Array.object('fieldset', 'submittable', 'invokable', 'command'),
+    pseudos: Array.object('fieldset', 'submittable', 'invokable', 'command', 'focusable'),
     clone: true,
-    interpolate: function(string) {
-      
-    },
     events: {
       _dialog: {
         element: {
@@ -48,6 +45,7 @@ LSD.Widget.Body.Dialog = new Class({
         },
         setRole: function() {
           var kind = this.attributes.kind;
+            console.error('set role', kind, this.element, this.attributes);
           if (!kind) return;
           var element = Slick.find(document.body, 'dialog#' + kind);
           if (element) return {origin: element};
@@ -63,6 +61,10 @@ LSD.Widget.Body.Dialog = new Class({
         }
       }
     }
+  },
+  
+  getParentElement: function() {
+    return document.body;
   },
   
   hidden: true
