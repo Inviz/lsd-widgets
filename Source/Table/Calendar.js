@@ -45,7 +45,7 @@ LSD.Widget.Table.Calendar = new Class({
   },
   
   setRow: function(days) {
-    var row = this.parent.apply(this, arguments);
+    var row = LSD.Widget.Table.Calendar.prototype.setRow.apply(this, arguments);
     var number = days[0]
     if ((number <= this.day) && (number + 7 > this.day)) {
       row.className = 'selected';
@@ -83,7 +83,7 @@ LSD.Widget.Table.Calendar = new Class({
   },
   
   setCell: function(number) {
-    var cell = this.parent.apply(this, arguments);
+    var cell = LSD.Widget.Table.Calendar.prototype.setCell.apply(this, arguments);
     if (cell == number) number = this.getDayFromCell(cell);
     if (number == ' ') {
       cell.className = 'empty';
