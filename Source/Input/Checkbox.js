@@ -24,15 +24,6 @@ LSD.Widget.Input.Checkbox = new Class({
   options: {
     tag: 'input',
     pseudos: Array.object('clickable', 'focusable', 'checkbox', 'value', 'form-associated'),
-    events: {
-      _checkbox: {
-        self: {
-          setDocument: function() {
-            if (this.attributes.checked || this.pseudos.checked) this.check();
-          }
-        }
-      }
-    },
     shortcuts: {
       space: 'toggle'
     }

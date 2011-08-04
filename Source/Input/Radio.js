@@ -24,15 +24,6 @@ LSD.Widget.Input.Radio = new Class({
   options: {
     tag: 'input',
     pseudos: Array.object('focusable', 'clickable', 'radio', 'form-associated', 'value'),
-    events: {
-      _radio: {
-        self: {
-          setDocument: function() {
-            if (this.attributes.checked || this.pseudos.checked) this.check();
-          }
-        }
-      }
-    },
     shortcuts: {
       space: 'click'
     }
