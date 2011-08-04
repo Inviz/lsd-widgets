@@ -56,11 +56,6 @@ LSD.Widget.Label = new Class({
     events: {
       self: {
         click: 'focusControl'
-      },
-      element: {
-        click: function(event) {
-          event.preventDefault();
-        }
       }
     }
   }

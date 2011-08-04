@@ -108,13 +108,11 @@ LSD.Widget.Table.Calendar = new Class({
     var day = date.getDate();
     this.firstDay = date.clone().set('date', 1);
     var monthSet = !this.month || this.firstDay.compare(this.month);
-    console.log(123123123, !this.month || this.firstDay.compare(this.month))
     if (monthSet) this.setMonth(this.firstDay);
     if (monthSet || day != this.day) {
       this.day = day;
       var cell = this.getCellByDay(this.day);
       if (this.selected) this.setCell(this.selected);
-      console.log(this.selected, cell)
       this.selected = cell;
       this.setCell(this.selected);
       this.fireEvent('setDay', [day, cell]);
@@ -123,7 +121,6 @@ LSD.Widget.Table.Calendar = new Class({
   
   setDate: function(date) {
     if (!date) date = new Date;
-    console.log(!this.date || this.date.compare(date), [date, this.date])
     if (this.date && !this.date.compare(date)) return false;
     this.date = date;
     this.fireEvent('set', date);
