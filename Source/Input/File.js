@@ -35,9 +35,7 @@ LSD.Widget.Input.File = new Class({
     layout: Array.object('::list'),
     proxies: {
       files: {
-        condition: function(widget) {
-          return (widget.tagName == 'file');
-        },
+        selector: 'file',
         container: function() {
           return this.list;
         }

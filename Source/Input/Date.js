@@ -25,7 +25,7 @@ LSD.Widget.Input.Date = new Class({
     attributes: {
       type: 'date'
     },
-    pseudos: Array.object('date'),
+    pseudos: Array.object('date'),  
     layout: {
       'if &:focused': {
         '::dialog:of-kind(input-date)': {

@@ -24,17 +24,7 @@ provides:
 LSD.Widget.Form = new Class({
   options: {
     tag: 'form',
-    pseudos: Array.object('form', 'fieldset', 'command', 'submittable'),
-    events: {
-      self: {
-        build: function() {
-          // novalidate html attribute disables internal form validation 
-          // on form submission. Chrome and Safari will block form 
-          // submission without any visual clues otherwise.
-          if (this.element.get('tag') == 'form') this.element.setProperty('novalidate', true);
-        }
-      }
-    }
+    pseudos: Array.object('form', 'fieldset', 'command', 'submittable')
   },
 
   getRequestURL: function() {

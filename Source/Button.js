@@ -25,10 +25,5 @@ LSD.Widget.Button = new Class({
     tag: 'button',
     inline: true,
     pseudos: Array.object('touchable', 'clickable', 'command')
-  },
-  
-  write: function(content) {
-    this.setState('text');
-    return this.parent.apply(this, arguments);
   }
 });

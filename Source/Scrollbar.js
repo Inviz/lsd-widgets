@@ -113,8 +113,6 @@ LSD.Widget.Scrollbar = new Class({
 })
 
 LSD.Widget.Scrollbar.Track = new Class({
-  Extends: LSD.Widget,
-  
   options: {
     tag: 'track'
   }

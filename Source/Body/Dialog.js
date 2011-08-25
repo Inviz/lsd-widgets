@@ -45,7 +45,6 @@ LSD.Widget.Body.Dialog = new Class({
         },
         setRole: function() {
           var kind = this.attributes.kind;
-            console.error('set role', kind, this.element, this.attributes);
           if (!kind) return;
           var element = Slick.find(document.body, 'dialog#' + kind);
           if (element) return {origin: element};
