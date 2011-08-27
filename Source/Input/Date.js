@@ -27,6 +27,7 @@ LSD.Widget.Input.Date = new Class({
     },
     pseudos: Array.object('date'),  
     layout: {
+      'button.expand': 'Expand',
       'if &:focused': {
         '::dialog:of-kind(input-date)': {
           'button.previous': 'Previous month',
@@ -36,6 +37,12 @@ LSD.Widget.Input.Date = new Class({
       }
     },
     relations: {
+      expander: {
+        selector: '.expand',
+        events: {
+          click: 'focus'
+        }
+      },
       decrementor: {
         selector: '.previous',
         events: {
@@ -58,14 +65,19 @@ LSD.Widget.Input.Date = new Class({
     },
     events: {
       _date: {
-        build: function() {
-          this.setDate(this.getDate());
+        self: {
+          build: function() {
+            this.setDate(this.getDate());
+          },
+          setDate: function(date, source) {
+            if (date && !source) this.setValue(this.formatDate(date));
+            if (this.calendar) this.calendar.setDate(date);
+          },
+          change: 'setDate' 
         },
-        setDate: function(date, source) {
-          if (date && !source) this.element.set('value', this.formatDate(date));
-          if (this.calendar) this.calendar.setDate(date);
-        },
-        change: 'setDate'
+        element: {
+          mousedown: 'focus'
+        }
       }
     }
   }
