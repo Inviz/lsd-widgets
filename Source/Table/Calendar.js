@@ -77,7 +77,7 @@ LSD.Widget.Table.Calendar = new Class({
   },
   
   getDayFromCell: function(cell) {
-    return parseInt(cell.innerHTML);
+    return parseInt(Element.get(cell, 'text'));
   },
   
   getCellByDay: function(day) {
@@ -91,7 +91,7 @@ LSD.Widget.Table.Calendar = new Class({
   
   getCellByEvent: function(event) {
     var target = event.target;
-    if (LSD.toLowerCase(target.tagName) != 'td') target = Slick.search(event, '! td');
+    if (LSD.toLowerCase(target.tagName) != 'td') target = Slick.find(event.target, '! td');
     return target;
   },
   
