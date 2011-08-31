@@ -25,7 +25,6 @@ LSD.Widget.Table.Calendar = new Class({
     date: null,
     format: {
       caption: "%B %Y"
-      
     },
     classes: ['calendar'],
     events: {
@@ -59,14 +58,16 @@ LSD.Widget.Table.Calendar = new Class({
   },
   
   selectDate: function(e) {
+    var cell = this.getCellByEvent(e);
     var date = this.date ? this.date.clone() : new Date;
-    var day = this.getDayFromCell(e.target);
+    var day = this.getDayFromCell(cell);
     this.setDate(date.set('date', day));
   },
   
   touchDate: function(e) {
-    e.target.className += " touched"
-    this.touched = e.target;
+    var cell = this.getCellByEvent(e);
+    cell.className += " touched"
+    this.touched = cell;
   },
   
   untouchDate: function(e) {
@@ -86,6 +87,12 @@ LSD.Widget.Table.Calendar = new Class({
     for (var i = 0, j = 0, node, nodes = row.childNodes; node = nodes[i++];)
       if (LSD.toLowerCase(node.tagName) == 'td')
         if (j++ == weekday) return node;
+  },
+  
+  getCellByEvent: function(event) {
+    var target = event.target;
+    if (LSD.toLowerCase(target.tagName) != 'td') target = Slick.search(event, '! td');
+    return target;
   },
   
   setCell: function(number) {
@@ -146,7 +153,9 @@ LSD.Widget.Table.Calendar = new Class({
       if (!row) row = data[index] = [];
       row.push(i);
     }
-    if (row.length < 7) for (var i = 0, j = data.length - 1, k = (7 - ((last + day) % 7)); i < k; i++) data[j].push(' ');
+    if (row.length < 7) 
+      for (var i = 0, j = data.length - 1, k = (7 - ((last + day) % 7)); i < k; i++) 
+        data[j].push(' ');
     if (this.built) this.setTable(table);
     else Object.extend(this.options, table);
   }
