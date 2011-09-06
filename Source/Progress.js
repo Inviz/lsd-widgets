@@ -27,7 +27,7 @@ LSD.Widget.Progress = new Class({
       _initial: {
         self: {
           build: function() {
-            if (!('value' in this.attributes)) this.setAttribute('value', 0)
+            this.set(this.attributes.value || 0);
           }
         }
       }
